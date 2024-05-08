@@ -4,8 +4,16 @@ from constantes import *
 pygame.init()
 
 # ----- Gera tela principal
-window = pygame.display.set_mode((500, 400))
-pygame.display.set_caption('Hello World!')
+window = pygame.display.set_mode((ALTURA_TELA_INICIAL, LARGURA_TELA_INICIAL))
+pygame.display.set_caption('Tela Inicial - NOME DO JOGO')
+
+# ----- Criando o Fundo Tela Inicial
+img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
+img_TelaInicial = pygame.transform.scale(img_TelaInicial, (ALTURA_TELA_INICIAL, LARGURA_TELA_INICIAL))
+
+# ----- Inicia Assets
+font_txt_TelaInicial = pygame.font.SysFont(None, 48)
+txt_TelaInicial = font_txt_TelaInicial.render("TÍTULO", True, (0,0,255))
 
 # ----- Inicia estruturas de dados
 game = True
@@ -19,10 +27,8 @@ while game:
             game = False
 
     # ----- Gera saídas
-    window.fill((255, 255, 255))  # Preenche com a cor branca
-    cor = (255, 0, 0)
-    vertices = [(250, 0), (500, 200), (250, 400), (0, 200)]
-    pygame.draw.polygon(window, cor, vertices)
+    window.blit(img_TelaInicial, (0,0))
+    window.blit(txt_TelaInicial, (50,50))
 
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador

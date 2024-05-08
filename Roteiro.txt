@@ -22,6 +22,6 @@ ROTEIRO GROSSO DO "Fruit Ninja":
 ROTEIRO DETALHADO da TELA INICIAL:
 1 - Criar arquivo da Tela Inicial (feito)
 2 - Gera o Frame (feito)
-3 - Plano de Fundo animado
-4 - Música
-5 - Aperte qualquer tecla para iniciar
+3 - Plano de Fundo animado 
+4 - Música 
+5 - Aperte qualquer tecla para iniciar 
