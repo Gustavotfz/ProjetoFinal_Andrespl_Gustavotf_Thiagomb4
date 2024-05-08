@@ -20,7 +20,7 @@ ROTEIRO GROSSO DO "Fruit Ninja":
         1 - Jacaré
 
 ROTEIRO DETALHADO da TELA INICIAL:
-1 - Criar arquivo da Tela Inicial
+1 - Criar arquivo da Tela Inicial (feito)
 2 - Gera o Frame
 3 - Plano de Fundo animado
 4 - Música
