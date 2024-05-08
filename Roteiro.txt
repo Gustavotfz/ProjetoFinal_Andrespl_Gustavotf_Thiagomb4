@@ -1,1 +1,20 @@
-ROTEIRO DO "Fruit Ninja":
+ROTEIRO GROSSO DO "Fruit Ninja":
+1 - Trailer
+    1 - Raposa andando com a raposinha
+    2 - Raposinha vai comprar um pão de mel
+    3 - Raposinha é atacada
+    4 - Raposa vê a raposinha capturada no terraço do P2
+    5 - Raposa percebe a invasão do P2
+    6 - Raposa vira fusileira
+2 - Tela Inicial
+    1 - Clique para jogar
+    2 - Fundo animado raposa fusileira
+3 - Jogo
+    1 - Fase 1 - Rua Quatá
+        1 - Polvo
+    2 - Fase 2 - Segundo andar P2
+        1 - Polvo + Canguru
+    3 - Fase 3 - Terceiro andar (FabLab)
+        1 - Polvo + Canguru + Rato
+    4 - Fase Final - Terráço P2
+        1 - Jacaré
