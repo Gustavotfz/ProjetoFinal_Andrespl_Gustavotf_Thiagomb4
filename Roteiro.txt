@@ -18,3 +18,10 @@ ROTEIRO GROSSO DO "Fruit Ninja":
         1 - Polvo + Canguru + Rato
     4 - Fase Final - Terráço P2
         1 - Jacaré
+
+ROTEIRO DETALHADO da TELA INICIAL:
+1 - Criar arquivo da Tela Inicial
+2 - Gera o Frame
+3 - Plano de Fundo animado
+4 - Música
+5 - Aperte qualquer tecla para iniciar
