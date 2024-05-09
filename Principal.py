@@ -13,7 +13,7 @@ img_TelaInicial = pygame.transform.scale(img_TelaInicial, (ALTURA_TELA_INICIAL, 
 
 # ----- Inicia Assets
 font_txt_TelaInicial = pygame.font.SysFont(None, 48)
-txt_TelaInicial = font_txt_TelaInicial.render("TÍTULO", True, (0,0,255))
+txt_TelaInicial = font_txt_TelaInicial.render("TÍTULO", True, (255,0,0))
 
 # ----- Inicia estruturas de dados
 game = True
