@@ -2,6 +2,7 @@ import pygame
 from constantes import *
 
 pygame.init()
+pygame.mixer.init()
 
 # ----- Gera tela principal
 window = pygame.display.set_mode((ALTURA_TELA_INICIAL, LARGURA_TELA_INICIAL))
@@ -18,7 +19,7 @@ font_txt_Pressioneqlqrbotao = pygame.font.SysFont(None,36)
 txt_Pressioneqlqrbotao = font_txt_Pressioneqlqrbotao.render("Pressione qualquer botão para iniciar o jogo!", True, (0,0,0))
 
 
-# musica_de_fundo = pygame.mixer.Sound('ACDC - Back In Black (Official Music Video).mp3')
+musica_de_fundo = pygame.mixer.Sound('Áudios/ACDC - Back In Black (Official Music Video).mp3')
 
 # ----- Inicia estruturas de dados
 game = True
@@ -26,7 +27,7 @@ game = True
 # ===== Loop principal =====
 while game:
 
-    # pygame.mixer.music.play(-1)
+    musica_de_fundo.play(-1)
     # ----- Trata eventos
     for event in pygame.event.get():
         # ----- Verifica consequências
