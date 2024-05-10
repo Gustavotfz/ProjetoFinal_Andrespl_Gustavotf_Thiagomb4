@@ -17,3 +17,8 @@ YELLOW = (255, 255, 0)
 
 Nome_Jogo = "INSPER INVASION"
 
+Bosses = {0:"icone_polvo.png",1:"icone_canguru.png",2:"icone_rato.png",3:"icone_jacare.png"}
+
+boss_n2 = [0,0,0,1,1,1]
+boss_n3 = [0,1,1,1,2,2]
+

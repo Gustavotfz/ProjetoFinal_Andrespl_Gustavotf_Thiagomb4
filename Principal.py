@@ -86,6 +86,8 @@ while game:
     if estagio == 2 and status_musica == 0:
         status_musica += 1
         musica_jogo.play(-1)
+    
+    
 
 
     # ----- Gera saídas
