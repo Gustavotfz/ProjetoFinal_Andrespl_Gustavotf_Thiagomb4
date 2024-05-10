@@ -6,7 +6,7 @@ pygame.mixer.init()
 
 # ----- Gera tela inicial
 window = pygame.display.set_mode((ALTURA_TELA_INICIAL, LARGURA_TELA_INICIAL))
-pygame.display.set_caption('Tela Inicial - NOME DO JOGO')
+pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
 
 # ----- Criando o Fundo Tela Inicial
 img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
@@ -32,8 +32,10 @@ while tela_inicial:
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
             tela_inicial = False
+            musica_de_fundo.stop()
         elif event.type == pygame.KEYDOWN:
             tela_inicial = False
+            musica_de_fundo.stop()
 
     # ----- Gera saídas
     window.blit(img_TelaInicial, (0,0))
@@ -44,8 +46,7 @@ while tela_inicial:
     pygame.display.update()  # Mostra o novo frame para o jogador
 
 window = pygame.display.set_mode((LARGURA_TELA_JOGO, ALTURA_TELA_JOGO))
-pygame.display.set_caption('NOME DO JOGO')
-
+pygame.display.set_caption(Nome_Jogo)
 
 while game:
 
