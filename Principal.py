@@ -78,16 +78,24 @@ while game:
                 for icone in all_sprites:
                     if icone.rect.collidepoint(event.pos):
                         icone.kill()
-                        if icone in lista_icone_viloes:
-                            score += 1
+                        if icone in lista_icones_viloes: # lista precisa ser com as variaveis dos icones presentes na classe
+                            if icone == 'polvo':
+                                score += 1
+                            elif icone == 'canguru':
+                                score += 5
+                            elif icone == 'rato':
+                                score += 10
+                            elif icone == 'jacare':
+                                score += 20  
                         else:
                             estagio += 1
 
 
-                            
+    # Desenhar a pontuação na tela
+    score_text = score_font.render("Score: " + str(score), True, BLACK)
+    window.blit(score_text, (10, 10))                       
 
     # ----- Gera saídas
-    #window.blit(img_fase1, (0,0))
     
     pygame.display.update()  # Mostra o novo frame para o jogador
 

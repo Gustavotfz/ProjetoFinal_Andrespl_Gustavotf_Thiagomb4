@@ -25,4 +25,4 @@ boss_n2 = [0,0,0,1,1,1,1,4,4,4]
 boss_n3 = [0,1,1,1,2,2,2,4,4,4]
 boss_final = [3,3,3,3,3,3,3,4,4,4]
 
-lista_icones_viloes = []
+lista_icones_viloes = [img_polvo,img_canguru,img_rato,img_jacare]

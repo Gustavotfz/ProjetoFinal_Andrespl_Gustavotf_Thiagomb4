@@ -7,6 +7,7 @@ ALTURA_LARGURA_ICONES = 100
 pygame.init()
 
 # ------- Assets dos Textos
+
 #Título da Tela Inicial
 font_txt_TelaInicial = pygame.font.SysFont("cambria", 56, True)
 txt_TelaInicial = font_txt_TelaInicial.render("INSPER INVASION", True, (255,0,0))
@@ -22,6 +23,9 @@ txt_Pre_Tutorial = font_txt_Pre_Tutorial.render("Clique para Iniciar o Tutorial"
 #Título da Página do Jogo
 font_txt_Jogo = pygame.font.SysFont("cambria", 56, True)
 txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
+
+# Fonte do score board
+score_font = pygame.font.Font(None, 36)
 
 
 
