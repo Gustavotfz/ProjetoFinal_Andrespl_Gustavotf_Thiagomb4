@@ -10,6 +10,9 @@ pygame.mixer.init()
 window = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
 pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
 
+
+
+
 # ----- Inicia estruturas de dados
 game = True
 tela_inicial = True
@@ -45,6 +48,10 @@ if game:
 estagio = 0
 status_musica = 0
 score = 0
+
+###
+score_text = score_font.render("Score: " + str(score), True, BLACK)
+###
 
 # Criando um grupo de icones
 all_icones = pygame.sprite.Group()
@@ -101,21 +108,12 @@ while game:
                                 score += 20  
                         else:
                             estagio += 1
-
-
-
-
-
-
-
-
-
-
-    # Desenhar a pontuação na tela
-    #window.blit(score_text, (10, 10))                       
-
-    # ----- Gera saídas
     
+    # ----- Gera saídas
+    all_icones.update()
+    all_icones.draw(window)
+    window.blit(score_text, (10, 10))
+
     pygame.display.update()  # Mostra o novo frame para o jogador
 
 # ===== Finalização =====
