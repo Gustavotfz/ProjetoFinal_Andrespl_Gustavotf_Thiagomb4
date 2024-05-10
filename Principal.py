@@ -33,6 +33,8 @@ while game:
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
             game = False
+        elif event.type == pygame.KEYDOWN:
+            game = False
 
     # ----- Gera saídas
     window.blit(img_TelaInicial, (0,0))
