@@ -1,3 +1,4 @@
+import pygame
 from constantes import *
 
 # ------- Assets dos Textos
