@@ -30,6 +30,7 @@ font_txt_Jogo = pygame.font.SysFont("cambria", 56, True)
 txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
 
 musica_de_fundo = pygame.mixer.Sound('Áudios/ACDC - Back In Black (Official Music Video).mp3')
+musica_jogo = pygame.mixer.Sound("Áudios/Missao_Impossivel")
 
 # ----- Inicia estruturas de dados
 game = True
@@ -59,10 +60,11 @@ while tela_inicial:
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
 if game:
-    window = pygame.display.set_mode((LARGURA_TELA_JOGO, ALTURA_TELA_JOGO))
+    #window = pygame.display.set_mode((LARGURA_TELA_JOGO, ALTURA_TELA_JOGO))
     pygame.display.set_caption(Nome_Jogo)
 
 estagio = 0
+status_musica = 0
 while game:
 
     # ----- Trata eventos
@@ -70,6 +72,7 @@ while game:
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
             game = False
+            musica_jogo.stop()
         elif event.type == pygame.KEYDOWN and (estagio == 0 or estagio == 1):
             estagio += 1
     
@@ -80,6 +83,10 @@ while game:
         window.blit(txt_Tutorial,(0,0))
     else:
         window.blit(txt_Jogo,(0,0))
+    if estagio == 2 and status_musica == 0:
+        status_musica += 1
+        musica_jogo.play(-1)
+
 
     # ----- Gera saídas
     #window.blit(img_fase1, (0,0))
