@@ -37,24 +37,31 @@ musica_jogo = pygame.mixer.Sound("Áudios/Missao_Impossivel.mp3")
 #Imagem do Insper da Tela Inicial
 img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
 img_TelaInicial = pygame.transform.scale(img_TelaInicial, (LARGURA_TELA, ALTURA_TELA))
+
 #Imagem da Raposa da Tela Inicial
 img_raposa_TelaInicial = pygame.image.load("Fotos/raposa_foto_tela_inicial.png")
 img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (400, 400))
+
 #Imagem da Entrada do P2 da Primeira Fase do Jogo
 img_fase1 = pygame.image.load("Fotos/fundo_nivel1.jpg")
 img_fase1 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
+
 #Ícone do Polvo para o Jogo
 img_polvo = pygame.image.load("Fotos/icone_polvo.png")
-#img_polvo = pygame.transform.scale(img_polvo, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
+img_polvo = pygame.transform.scale(img_polvo, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
+
 #Ícone do Canguru para o Jogo
 img_canguru = pygame.image.load("Fotos/icone_canguru.png")
-#img_canguru = pygame.transform.scale(img_canguru, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
+img_canguru = pygame.transform.scale(img_canguru, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
+
 #Ícone do Rato para o Jogo
 img_rato = pygame.image.load("Fotos/icone_rato.png")
-#img_rato = pygame.transform.scale(img_rato, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
+img_rato = pygame.transform.scale(img_rato, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
+
 #Ícone do Jacaré para o Jogo
 img_jacare = pygame.image.load("Fotos/icone_jacare.png")
-#img_jacare = pygame.transform.scale(img_jacare, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
+img_jacare = pygame.transform.scale(img_jacare, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
+
 #Ícone da Raposa para o Jogo
 img_raposa = pygame.image.load("Fotos/icone_raposa.png")
-#img_raposa = pygame.transform.scale(img_raposa, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
+img_raposa = pygame.transform.scale(img_raposa, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
