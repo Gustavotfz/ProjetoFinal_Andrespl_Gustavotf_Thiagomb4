@@ -1,8 +1,6 @@
 import pygame
-ALTURA_TELA_JOGO = 600
-LARGURA_TELA_JOGO = 600 
-ALTURA_TELA_INICIAL = 500
-LARGURA_TELA_INICIAL = 800
+ALTURA_TELA = 500
+LARGURA_TELA = 800
 
 pygame.init()
 
@@ -36,13 +34,13 @@ musica_jogo = pygame.mixer.Sound("Áudios/Missao_Impossivel.mp3")
 # ------- Assets das Imagens
 #Imagem do Insper da Tela Inicial
 img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
-img_TelaInicial = pygame.transform.scale(img_TelaInicial, (ALTURA_TELA_INICIAL, LARGURA_TELA_INICIAL))
+img_TelaInicial = pygame.transform.scale(img_TelaInicial, (ALTURA_TELA, LARGURA_TELA))
 #Imagem da Raposa da Tela Inicial
 img_raposa_TelaInicial = pygame.image.load("Fotos/raposa_foto_tela_inicial.png")
 img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (300, 300))
 #Imagem da Entrada do P2 da Primeira Fase do Jogo
 img_fase1 = pygame.image.load("Fotos/fundo_nivel1.jpg")
-img_fase1 = pygame.transform.scale(img_fase1, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
+img_fase1 = pygame.transform.scale(img_fase1, (ALTURA_TELA, LARGURA_TELA))
 #Ícone do Polvo para o Jogo
 img_polvo = pygame.image.load("Fotos/icone_polvo.png")
 #img_polvo = pygame.transform.scale(img_polvo, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))

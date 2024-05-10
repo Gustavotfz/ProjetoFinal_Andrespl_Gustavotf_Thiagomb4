@@ -6,7 +6,7 @@ pygame.init()
 pygame.mixer.init()
 
 # ----- Gera tela inicial
-window = pygame.display.set_mode((LARGURA_TELA_INICIAL, ALTURA_TELA_INICIAL))
+window = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
 pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
 
 # ----- Inicia estruturas de dados
