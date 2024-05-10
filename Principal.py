@@ -78,11 +78,14 @@ while game:
         status_musica += 1
         musica_jogo.play(-1)
 
-    while estagio == 2:
+    
+          
+    if estagio == 2:
         for event in pygame.event.get():
         # ----- Verifica consequências
             if event.type == pygame.QUIT:
                 game = False
+
             elif event.type == pygame.MOUSEBUTTONDOWN:  # Corte os icones com o mouse
                 for icone in all_icones:
                     if icone.rect.collidepoint(event.pos):
@@ -100,9 +103,17 @@ while game:
                             estagio += 1
 
 
+
+
+
+
+
+
+
+
     # Desenhar a pontuação na tela
     score_text = score_font.render("Score: " + str(score), True, BLACK)
-    window.blit(score_text, (10, 10))                       
+    #window.blit(score_text, (10, 10))                       
 
     # ----- Gera saídas
     
