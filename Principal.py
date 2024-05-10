@@ -11,6 +11,8 @@ pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
 # ----- Criando o Fundo Tela Inicial
 img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
 img_TelaInicial = pygame.transform.scale(img_TelaInicial, (ALTURA_TELA_INICIAL, LARGURA_TELA_INICIAL))
+img_fase1 = pygame.image.load("Fotos/fundo_nivel1.jpg")
+img_fase1 = pygame.transform.scale(img_fase1, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
 
 # ----- Inicia Assets
 font_txt_TelaInicial = pygame.font.SysFont("cambria", 56, True)
@@ -58,8 +60,9 @@ while game:
         
 
     # ----- Gera saídas
-    window.blit(img_TelaInicial, (0,0))
+    window.blit(img_fase1, (0,0))
     
+    pygame.display.update()  # Mostra o novo frame para o jogador
 
 # ===== Finalização =====
 pygame.quit()  # Função do PyGame que finaliza os recursos utilizados
