@@ -101,6 +101,8 @@ while game:
                                 score += 20  
                         else:
                             estagio += 1
+            
+            
 
 
 
@@ -111,9 +113,9 @@ while game:
 
 
 
-    # Desenhar a pontuação na tela
-    score_text = score_font.render("Score: " + str(score), True, BLACK)
-    #window.blit(score_text, (10, 10))                       
+        # Desenhar a pontuação na tela
+        score_text = score_font.render("Score: " + str(score), True, BLACK)
+        #window.blit(score_text, (10, 10))                       
 
     # ----- Gera saídas
     
