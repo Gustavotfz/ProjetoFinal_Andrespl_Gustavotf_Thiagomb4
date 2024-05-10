@@ -1,4 +1,4 @@
-from assets import img_jacare,img_canguru,img_polvo,img_rato
+from assets import img_jacare,img_canguru,img_polvo,img_rato,img_raposa
 
 ALTURA_TELA = 500
 LARGURA_TELA = 800
@@ -18,8 +18,10 @@ YELLOW = (255, 255, 0)
 Nome_Jogo = "INSPER INVASION"
 
 
-Bosses = {0:img_polvo, 1:img_canguru, 2:img_rato, 3:img_jacare}
+Bosses = {0:img_polvo, 1:img_canguru, 2:img_rato, 3:img_jacare, 4:img_raposa}
 
-boss_n2 = [0,0,0,1,1,1]
-boss_n3 = [0,1,1,1,2,2]
+boss_n1 = [0,0,0,0,0,0,0,4,4,4]
+boss_n2 = [0,0,0,1,1,1,1,4,4,4]
+boss_n3 = [0,1,1,1,2,2,2,4,4,4]
+boss_final = [3,3,3,3,3,3,3,4,4,4]
 
