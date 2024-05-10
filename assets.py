@@ -53,3 +53,6 @@ img_rato = pygame.image.load("Fotos/icone_rato.png")
 #Ícone do Jacaré para o Jogo
 img_jacare = pygame.image.load("Fotos/icone_jacare.png")
 #img_jacare = pygame.transform.scale(img_jacare, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
+#Ícone da Raposa para o Jogo
+img_raposa = pygame.image.load("Fotos/icone_raposa.png")
+#img_raposa = pygame.transform.scale(img_raposa, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
