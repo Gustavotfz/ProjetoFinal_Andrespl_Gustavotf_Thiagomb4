@@ -11,10 +11,11 @@ class Icones(pygame.sprite.Sprite):
         self.image = img
         self.rect = self.image.get_rect()
         self.rect.x = random.randint(0, LARGURA_TELA - ALTURA_LARGURA_ICONES)
-        self.rect.y = random.randint(-100, -ALTURA_LARGURA_ICONES)
-        self.speedx = random.randint(-3, 3)
+        self.rect.y = ALTURA_TELA - ALTURA_LARGURA_ICONES - 1
+        if self.rect.x <= 400:
+            self.speedx = random.randint(-3, LARGURA_TELA - ALTURA_LARGURA_ICONES)
         self.speedy = random.randint(2, 9)
-
+    '''
     def update(self):
         # Atualizando a posição do meteoro
         self.rect.x += self.speedx
@@ -26,3 +27,4 @@ class Icones(pygame.sprite.Sprite):
             self.rect.y = random.randint(-100, -METEOR_HEIGHT)
             self.speedx = random.randint(-3, 3)
             self.speedy = random.randint(2, 9)
+            '''
