@@ -2,6 +2,8 @@ import pygame
 ALTURA_TELA = 500
 LARGURA_TELA = 800
 
+ALTURA_LARGURA_ICONES = 100
+
 pygame.init()
 
 # ------- Assets dos Textos
