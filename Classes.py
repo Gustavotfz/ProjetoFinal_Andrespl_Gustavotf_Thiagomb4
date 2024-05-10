@@ -14,6 +14,7 @@ class Icones(pygame.sprite.Sprite):
         self.rect.y = ALTURA_TELA - ALTURA_LARGURA_ICONES - 1
         self.maxHigh = random.randint(0, ALTURA_LARGURA_ICONES)
         self.speedy = (2*(self.maxHigh - ALTURA_LARGURA_ICONES) - 1)/(FPS*Tempo_Ar)
+        print("Velocidade Vy", self.speedy)
         self.Yorientation = 0
         if self.rect.x <= 400:
             self.speedx = random.randint(int((401-self.rect.x)/(FPS*Tempo_Ar)), int((800-ALTURA_LARGURA_ICONES-self.rect.x)/(FPS*Tempo_Ar)))

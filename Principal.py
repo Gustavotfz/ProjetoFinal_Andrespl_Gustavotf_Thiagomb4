@@ -57,7 +57,7 @@ score_text = score_font.render("Score: " + str(score), True, BLACK)
 all_icones = pygame.sprite.Group()
 # Criando os icones
 for i in range(5):
-    n_icone = random.randint(0,len(boss_n1))
+    n_icone = random.randint(0,len(boss_n1)-1)
     icone = Icones(Bosses[boss_n1[n_icone]])
     all_icones.add(icone)
 
