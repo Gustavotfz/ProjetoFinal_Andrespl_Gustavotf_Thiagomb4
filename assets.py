@@ -1,5 +1,10 @@
 import pygame
-from constantes import *
+ALTURA_TELA_JOGO = 600
+LARGURA_TELA_JOGO = 600 
+ALTURA_TELA_INICIAL = 500
+LARGURA_TELA_INICIAL = 800
+
+pygame.init()
 
 # ------- Assets dos Textos
 #Título da Tela Inicial
@@ -39,14 +44,14 @@ img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (300, 30
 img_fase1 = pygame.image.load("Fotos/fundo_nivel1.jpg")
 img_fase1 = pygame.transform.scale(img_fase1, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
 #Ícone do Polvo para o Jogo
-img_polvo = pygame.image.load("Fotos/icone_polvo.jpg")
+img_polvo = pygame.image.load("Fotos/icone_polvo.png")
 #img_polvo = pygame.transform.scale(img_polvo, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
 #Ícone do Canguru para o Jogo
-img_canguru = pygame.image.load("Fotos/icone_canguru.jpg")
+img_canguru = pygame.image.load("Fotos/icone_canguru.png")
 #img_canguru = pygame.transform.scale(img_canguru, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
 #Ícone do Rato para o Jogo
-img_rato = pygame.image.load("Fotos/icone_rato.jpg")
+img_rato = pygame.image.load("Fotos/icone_rato.png")
 #img_rato = pygame.transform.scale(img_rato, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
 #Ícone do Jacaré para o Jogo
-img_jacare = pygame.image.load("Fotos/icone_jacare.jpg")
+img_jacare = pygame.image.load("Fotos/icone_jacare.png")
 #img_jacare = pygame.transform.scale(img_jacare, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
