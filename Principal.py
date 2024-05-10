@@ -59,7 +59,9 @@ while game:
     elif estagio == 1:
         window.blit(txt_Tutorial,(0,0))
     else:
-        window.blit(txt_Jogo,(0,0))
+        window.blit(img_fase1,(0,0))
+
+
     if estagio == 2 and status_musica == 0:
         status_musica += 1
         musica_jogo.play(-1)
