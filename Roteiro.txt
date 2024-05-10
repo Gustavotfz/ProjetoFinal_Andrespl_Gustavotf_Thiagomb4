@@ -25,3 +25,23 @@ ROTEIRO DETALHADO da TELA INICIAL:
 3 - Plano de Fundo animado 
 4 - Música 
 5 - Aperte qualquer tecla para iniciar 
+
+JOBS TO BE DONE:
+ 1 - Trajetória de Vx
+ 2 - Trajetória de Vy
+ 3 - Cria as 3 vidas
+ 4 - Icone some se bater no Fundo e perde 1 vida
+ 5 - Icone Morre se clicar e adiciona ponto baseado em qual ícone é
+ 6 - Animação da morte de um ícone
+ 7 - Perde o jogo se cortar a bomba
+ 8 - Animação se tocar a bomba
+ 9 - Rounds de bombas
+10 - Contador de pontos
+11 - Transição entre os níveis
+12 - Tirar as fotos do cenário
+13 - Fazer asset das fotos do cenário
+14 - Colocar as Fotos como cenários
+15 - Colocar os sons de efeito de cada Animação
+16 - Randomizar a altura máxima
+17 - ***JumpScare
+18 - ***Ponruação do JumpScare
