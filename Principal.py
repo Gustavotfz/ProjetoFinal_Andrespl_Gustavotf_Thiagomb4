@@ -1,6 +1,7 @@
 import pygame
 from constantes import *
 from assets import *
+from Classes import *
 
 pygame.init()
 pygame.mixer.init()
@@ -45,6 +46,14 @@ estagio = 0
 status_musica = 0
 score = 0
 
+# Criando um grupo de icones
+all_icones = pygame.sprite.Group()
+# Criando os icones
+for i in range(5):
+    n_icone = random.randint(0,10)
+    icone = Icones(Bosses[boss_n1[n_icone]])
+    all_icones.add(icone)
+
 while game:
 
     # ----- Trata eventos
@@ -75,7 +84,7 @@ while game:
             if event.type == pygame.QUIT:
                 game = False
             elif event.type == pygame.MOUSEBUTTONDOWN:  # Corte os icones com o mouse
-                for icone in all_sprites:
+                for icone in all_icones:
                     if icone.rect.collidepoint(event.pos):
                         icone.kill()
                         if icone in lista_icones_viloes: # lista precisa ser com as variaveis dos icones presentes na classe
