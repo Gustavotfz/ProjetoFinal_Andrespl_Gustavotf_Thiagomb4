@@ -26,6 +26,7 @@ txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
 
 # Fonte do score board
 score_font = pygame.font.Font(None, 36)
+score_text = score_font.render("Score: " + str(score), True, BLACK)
 
 
 
