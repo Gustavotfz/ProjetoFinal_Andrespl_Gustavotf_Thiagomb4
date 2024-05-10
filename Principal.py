@@ -30,7 +30,7 @@ font_txt_Jogo = pygame.font.SysFont("cambria", 56, True)
 txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
 
 musica_de_fundo = pygame.mixer.Sound('Áudios/ACDC - Back In Black (Official Music Video).mp3')
-musica_jogo = pygame.mixer.Sound("Áudios/Missao_Impossivel")
+musica_jogo = pygame.mixer.Sound("Áudios/Missao_Impossivel.mp3")
 
 # ----- Inicia estruturas de dados
 game = True
