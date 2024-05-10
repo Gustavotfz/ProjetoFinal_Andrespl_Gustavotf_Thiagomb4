@@ -1,6 +1,6 @@
 import pygame
 from constantes import *
-
+from assets import *
 
 pygame.init()
 pygame.mixer.init()
@@ -9,47 +9,23 @@ pygame.mixer.init()
 window = pygame.display.set_mode((ALTURA_TELA_INICIAL, LARGURA_TELA_INICIAL))
 pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
 
-# ----- Criando o Fundo Tela Inicial
-img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
-img_TelaInicial = pygame.transform.scale(img_TelaInicial, (ALTURA_TELA_INICIAL, LARGURA_TELA_INICIAL))
-img_raposa_TelaInicial = pygame.image.load("Fotos/raposa_foto_tela_inicial.png")
-img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (300, 300))
-# ----- Criando o Jogo
-img_fase1 = pygame.image.load("Fotos/fundo_nivel1.jpg")
-img_fase1 = pygame.transform.scale(img_fase1, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
-
-# ----- Inicia Assets
-font_txt_TelaInicial = pygame.font.SysFont("cambria", 56, True)
-txt_TelaInicial = font_txt_TelaInicial.render("INSPER INVASION", True, (255,0,0))
-font_txt_Pressioneqlqrbotao = pygame.font.SysFont(None,36)
-txt_Pressioneqlqrbotao = font_txt_Pressioneqlqrbotao.render("Pressione qualquer botão para iniciar o jogo!", True, (0,0,0))
-font_txt_Tutorial = pygame.font.SysFont("cambria", 56, True)
-txt_Tutorial = font_txt_Tutorial.render("Clique para pular o Tutorial", True, (255,0,0))
-font_txt_Pre_Tutorial = pygame.font.SysFont("cambria", 56, True)
-txt_Pre_Tutorial = font_txt_Pre_Tutorial.render("Clique para Iniciar o Tutorial", True, (255,0,0))
-font_txt_Jogo = pygame.font.SysFont("cambria", 56, True)
-txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
-
-musica_de_fundo = pygame.mixer.Sound('Áudios/ACDC - Back In Black (Official Music Video).mp3')
-musica_jogo = pygame.mixer.Sound("Áudios/Missao_Impossivel.mp3")
-
 # ----- Inicia estruturas de dados
 game = True
 tela_inicial = True
 # ===== Loop principal =====
 while tela_inicial:
-    musica_de_fundo.play(-1)
+    musica_tela_inicial.play(-1)
     # ----- Trata eventos
     for event in pygame.event.get():
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
             tela_inicial = False
             game = False
-            musica_de_fundo.stop()
+            musica_tela_inicial.stop()
             continue
         elif event.type == pygame.KEYDOWN:
             tela_inicial = False
-            musica_de_fundo.stop()
+            musica_tela_inicial.stop()
             continue
 
     # ----- Gera saídas
@@ -88,7 +64,7 @@ while game:
         status_musica += 1
         musica_jogo.play(-1)
     
-    
+
 
 
     # ----- Gera saídas
