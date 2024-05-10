@@ -19,7 +19,12 @@ font_txt_TelaInicial = pygame.font.SysFont("cambria", 56, True)
 txt_TelaInicial = font_txt_TelaInicial.render("INSPER INVASION", True, (255,0,0))
 font_txt_Pressioneqlqrbotao = pygame.font.SysFont(None,36)
 txt_Pressioneqlqrbotao = font_txt_Pressioneqlqrbotao.render("Pressione qualquer botão para iniciar o jogo!", True, (0,0,0))
-
+font_txt_Tutorial = pygame.font.SysFont("cambria", 56, True)
+txt_Tutorial = font_txt_Tutorial.render("Clique para pular o Tutorial", True, (255,0,0))
+font_txt_Pre_Tutorial = pygame.font.SysFont("cambria", 56, True)
+txt_Pre_Tutorial = font_txt_Pre_Tutorial.render("Clique para Iniciar o Tutorial", True, (255,0,0))
+font_txt_Jogo = pygame.font.SysFont("cambria", 56, True)
+txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
 
 musica_de_fundo = pygame.mixer.Sound('Áudios/ACDC - Back In Black (Official Music Video).mp3')
 
@@ -34,10 +39,13 @@ while tela_inicial:
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
             tela_inicial = False
+            game = False
             musica_de_fundo.stop()
+            continue
         elif event.type == pygame.KEYDOWN:
             tela_inicial = False
             musica_de_fundo.stop()
+            continue
 
     # ----- Gera saídas
     window.blit(img_TelaInicial, (0,0))
@@ -46,10 +54,11 @@ while tela_inicial:
 
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
+if game:
+    window = pygame.display.set_mode((LARGURA_TELA_JOGO, ALTURA_TELA_JOGO))
+    pygame.display.set_caption(Nome_Jogo)
 
-window = pygame.display.set_mode((LARGURA_TELA_JOGO, ALTURA_TELA_JOGO))
-pygame.display.set_caption(Nome_Jogo)
-
+estagio = 0
 while game:
 
     # ----- Trata eventos
@@ -57,10 +66,19 @@ while game:
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
             game = False
-        
+        elif event.type == pygame.KEYDOWN and (estagio == 0 or estagio == 1):
+            estagio += 1
+    
+    window.fill((255, 255, 255))
+    if estagio == 0:
+        window.blit(txt_Pre_Tutorial,(0,0))
+    elif estagio == 1:
+        window.blit(txt_Tutorial,(0,0))
+    else:
+        window.blit(txt_Jogo,(0,0))
 
     # ----- Gera saídas
-    window.blit(img_fase1, (0,0))
+    #window.blit(img_fase1, (0,0))
     
     pygame.display.update()  # Mostra o novo frame para o jogador
 
