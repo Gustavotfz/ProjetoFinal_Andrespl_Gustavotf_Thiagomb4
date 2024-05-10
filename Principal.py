@@ -11,6 +11,9 @@ pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
 # ----- Criando o Fundo Tela Inicial
 img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
 img_TelaInicial = pygame.transform.scale(img_TelaInicial, (ALTURA_TELA_INICIAL, LARGURA_TELA_INICIAL))
+img_raposa_TelaInicial = pygame.image.load("Fotos/raposa_foto_tela_inicial.png")
+img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (300, 300))
+# ----- Criando o Jogo
 img_fase1 = pygame.image.load("Fotos/fundo_nivel1.jpg")
 img_fase1 = pygame.transform.scale(img_fase1, (ALTURA_TELA_JOGO, LARGURA_TELA_JOGO))
 
@@ -42,7 +45,8 @@ while tela_inicial:
     # ----- Gera saídas
     window.blit(img_TelaInicial, (0,0))
     window.blit(txt_TelaInicial, (84,20))
-    window.blit(txt_Pressioneqlqrbotao, (40,100))   
+    window.blit(txt_Pressioneqlqrbotao, (40,100))
+    window.blit(img_raposa_TelaInicial, (100,150))
 
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
