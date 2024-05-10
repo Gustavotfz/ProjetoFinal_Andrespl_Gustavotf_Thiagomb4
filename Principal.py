@@ -23,18 +23,18 @@ musica_de_fundo = pygame.mixer.Sound('Áudios/ACDC - Back In Black (Official Mus
 
 # ----- Inicia estruturas de dados
 game = True
-
+tela_inicial = True
 # ===== Loop principal =====
-while game:
+while tela_inicial:
 
     musica_de_fundo.play(-1)
     # ----- Trata eventos
     for event in pygame.event.get():
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
-            game = False
+            tela_inicial = False
         elif event.type == pygame.KEYDOWN:
-            game = False
+            tela_inicial = False
 
     # ----- Gera saídas
     window.blit(img_TelaInicial, (0,0))
@@ -43,6 +43,19 @@ while game:
 
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
+
+while game:
+
+    # ----- Trata eventos
+    for event in pygame.event.get():
+        # ----- Verifica consequências
+        if event.type == pygame.QUIT:
+            game = False
+        
+
+    # ----- Gera saídas
+    window.blit(1, (0,0))
+    
 
 # ===== Finalização =====
 pygame.quit()  # Função do PyGame que finaliza os recursos utilizados
