@@ -46,9 +46,23 @@ img_TelaInicial = pygame.transform.scale(img_TelaInicial, (LARGURA_TELA, ALTURA_
 img_raposa_TelaInicial = pygame.image.load("Fotos/raposa_foto_tela_inicial.png")
 img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (400, 400))
 
+
 #Imagem da Entrada do P2 da Primeira Fase do Jogo
 img_fase1 = pygame.image.load("Fotos/fundo_nivel1.jpg")
 img_fase1 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
+
+#Imagem do Segundo andar do P2 da Segunda Fase do Jogo
+img_fase2 = pygame.image.load("Fotos/fundo_nivel2.jpg")
+img_fase2 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
+
+#Imagem do FabLab da Terceira Fase do Jogo
+img_fase3 = pygame.image.load("Fotos/fundo_nivel3.jpg")
+img_fase3 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
+
+#Imagem do Terraço do P2 da Quarta/Última Fase do Jogo
+img_fase4 = pygame.image.load("Fotos/fundo_nivel4.jpg")
+img_fase4 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
+
 
 #Ícone do Polvo para o Jogo
 img_polvo = pygame.image.load("Fotos/icone_polvo.png")
