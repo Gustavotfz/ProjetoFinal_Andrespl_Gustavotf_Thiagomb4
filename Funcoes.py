@@ -154,27 +154,25 @@ def TelaFinal(end):
         window.blit(txt_Final,(0,0))
         pygame.display.update()  # Mostra o novo frame para o jogador
 
-def TelaFinal_morteraposa ():
-    game_status = True
+def TelaFinal_morteraposa (end):
+    end = True
     pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
     # ----- Inicia estruturas de dados
-    tela_final = True
     # ===== Loop principal =====
-    while tela_final:
+    while end:
         # ----- Trata eventos
         for event in pygame.event.get():
             # ----- Verifica consequências
             if event.type == pygame.QUIT:
-                tela_final = False
-                game_status = False
+                end = False
                 continue
 
         # ----- Gera saídas
-        window.blit(img_TelaInicial, (0,0))
-        window.blit(txt_TelaInicial, (270,20))
-        window.blit(txt_Pressioneqlqrbotao, (180,120))
-        window.blit(img_raposa_TelaInicial, (150,200))
-
+        window.fill(BLACK)
+        window.blit(font_txt_game_over, (320,20))
+        window.blit(font_txt_tela_morte_raposa, (170,100))
+        window.blit(img_raposa_chorando_TelaFinal, (75,200))
+        window.blit(img_raposa_chorando_TelaFinal2, (600,200))
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
-    return game_status
+    return end

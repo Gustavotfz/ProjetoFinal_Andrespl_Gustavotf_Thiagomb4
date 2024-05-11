@@ -26,6 +26,12 @@ txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
 #Título da Página de Derrota
 font_txt_Final = pygame.font.SysFont("cambria", 56, True)
 txt_Final = font_txt_Final.render("Jogo", True, (255,0,0))
+#Título da Tela Final (matou a raposa)
+font_txt_tela_morte_raposa = pygame.font.SysFont("cambria", 66, True)
+font_txt_tela_morte_raposa = font_txt_tela_morte_raposa.render("Você matou a raposa bebê!", True, (255,250,205))
+#GAME OVER
+font_txt_game_over = pygame.font.SysFont("cambria", 66, True)
+font_txt_game_over = font_txt_game_over.render("GAME OVER", True, (255,0,0))
 
 # Fonte do score board
 score_font = pygame.font.SysFont(None, 60)
@@ -49,6 +55,13 @@ img_TelaInicial = pygame.transform.scale(img_TelaInicial, (LARGURA_TELA, ALTURA_
 img_raposa_TelaInicial = pygame.image.load("Fotos/raposa_foto_tela_inicial.png")
 img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (450, 450))
 
+#Imagem da Raposa da Tela Final
+img_raposa_chorando_TelaFinal = pygame.image.load("Fotos/raposa_chorando_telafinal.png")
+img_raposa_chorando_TelaFinal = pygame.transform.scale(img_raposa_chorando_TelaFinal, (450, 450))
+
+#Imagem 2 da Raposa da Tela Final
+img_raposa_chorando_TelaFinal2 = pygame.image.load("Fotos/raposa_chorando_telafinal2.png")
+img_raposa_chorando_TelaFinal2 = pygame.transform.scale(img_raposa_chorando_TelaFinal2, (540, 756))
 
 #Imagem da Entrada do P2 da Primeira Fase do Jogo
 img_fase1 = pygame.image.load("Fotos/fundo_nivel1.jpg")

@@ -16,7 +16,7 @@ PreTutorial = TelaInicial()
 Tutorial = TelaPreTutorial(PreTutorial)
 game = TelaTutorial(Tutorial)
 end = TelaGame(game)
-TelaFinal(end)
+TelaFinal_morteraposa(end)
 
 # ===== Finalização =====
 pygame.quit()  # Função do PyGame que finaliza os recursos utilizados
