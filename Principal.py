@@ -109,10 +109,10 @@ while game:
                         else:
                             estagio += 1
     
-    # ----- Gera saídas
-    all_icones.update()
-    all_icones.draw(window)
-    window.blit(score_text, (10, 10))
+        # ----- Gera saídas
+        all_icones.update()
+        all_icones.draw(window)
+        window.blit(score_text, (300, 10))
 
     pygame.display.update()  # Mostra o novo frame para o jogador
 
