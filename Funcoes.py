@@ -178,3 +178,28 @@ def TelaFinal_morteraposa (end):
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
     return end
+
+def TelaFinal_principal (end):
+    end = True
+    pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
+    # ----- Inicia estruturas de dados
+    # ===== Loop principal =====
+    while end:
+        # ----- Trata eventos
+        for event in pygame.event.get():
+            # ----- Verifica consequências
+            if event.type == pygame.QUIT:
+                end = False
+                continue
+
+        # ----- Gera saídas
+        window.fill(BLACK)
+        window.blit(font_txt_game_over, (315,15))
+        window.blit(font_txt_tela_final_vidas, (200,35))
+        window.blit(img_crocodilo_TelaFinal, (285,200)) 
+        window.blit(img_canguru_TelaFinal, (285,200))
+        window.blit(img_rato_TelaFinal, (285,200))
+
+        # ----- Atualiza estado do jogo
+        pygame.display.update()  # Mostra o novo frame para o jogador
+    return end

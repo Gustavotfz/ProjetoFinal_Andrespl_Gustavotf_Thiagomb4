@@ -26,12 +26,18 @@ txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
 #Título da Página de Derrota
 font_txt_Final = pygame.font.SysFont("cambria", 56, True)
 txt_Final = font_txt_Final.render("Jogo", True, (255,0,0))
+
+# Textos das Telas Finais
 #Título da Tela Final (matou a raposa)
 font_txt_tela_morte_raposa = pygame.font.SysFont("cambria", 66, True)
 font_txt_tela_morte_raposa = font_txt_tela_morte_raposa.render("Você matou a raposa bebê!", True, (255,250,205))
 #GAME OVER
 font_txt_game_over = pygame.font.SysFont("cambria", 76, True)
 font_txt_game_over = font_txt_game_over.render("GAME OVER", True, (255,0,0))
+#Título da Tela Final (perdeu as vidas)
+font_txt_tela_final_vidas = pygame.font.SysFont("cambria", 66, True)
+font_txt_tela_final_vidas = font_txt_tela_final_vidas.render("Os mascotes invadiram a faculdade!", True, (255,250,205))
+
 
 # Fonte do score board
 score_font = pygame.font.SysFont(None, 60)
