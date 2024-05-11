@@ -26,9 +26,9 @@ def TelaInicial ():
 
         # ----- Gera saídas
         window.blit(img_TelaInicial, (0,0))
-        window.blit(txt_TelaInicial, (84,20))
-        window.blit(txt_Pressioneqlqrbotao, (40,100))
-        window.blit(img_raposa_TelaInicial, (100,150))
+        window.blit(txt_TelaInicial, (270,20))
+        window.blit(txt_Pressioneqlqrbotao, (180,120))
+        window.blit(img_raposa_TelaInicial, (150,200))
 
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
@@ -153,3 +153,28 @@ def TelaFinal(end):
         window.fill((255, 255, 255))
         window.blit(txt_Final,(0,0))
         pygame.display.update()  # Mostra o novo frame para o jogador
+
+def TelaFinal_morteraposa ():
+    game_status = True
+    pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
+    # ----- Inicia estruturas de dados
+    tela_final = True
+    # ===== Loop principal =====
+    while tela_final:
+        # ----- Trata eventos
+        for event in pygame.event.get():
+            # ----- Verifica consequências
+            if event.type == pygame.QUIT:
+                tela_final = False
+                game_status = False
+                continue
+
+        # ----- Gera saídas
+        window.blit(img_TelaInicial, (0,0))
+        window.blit(txt_TelaInicial, (270,20))
+        window.blit(txt_Pressioneqlqrbotao, (180,120))
+        window.blit(img_raposa_TelaInicial, (150,200))
+
+        # ----- Atualiza estado do jogo
+        pygame.display.update()  # Mostra o novo frame para o jogador
+    return game_status

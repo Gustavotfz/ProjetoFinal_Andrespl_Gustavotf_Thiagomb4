@@ -9,10 +9,10 @@ pygame.init()
 # ------- Assets dos Textos
 
 #Título da Tela Inicial
-font_txt_TelaInicial = pygame.font.SysFont("cambria", 56, True)
+font_txt_TelaInicial = pygame.font.SysFont("cambria", 66, True)
 txt_TelaInicial = font_txt_TelaInicial.render("INSPER INVASION", True, (255,0,0))
 #Mensagem de "Pressione qualquer botão" da Tela Inicial
-font_txt_Pressioneqlqrbotao = pygame.font.SysFont(None,36)
+font_txt_Pressioneqlqrbotao = pygame.font.SysFont(None,46)
 txt_Pressioneqlqrbotao = font_txt_Pressioneqlqrbotao.render("Pressione qualquer botão para iniciar o jogo!", True, (0,0,0))
 #Título da Página de Tutorial
 font_txt_Tutorial = pygame.font.SysFont("cambria", 56, True)
@@ -47,7 +47,7 @@ img_TelaInicial = pygame.transform.scale(img_TelaInicial, (LARGURA_TELA, ALTURA_
 
 #Imagem da Raposa da Tela Inicial
 img_raposa_TelaInicial = pygame.image.load("Fotos/raposa_foto_tela_inicial.png")
-img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (400, 400))
+img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (450, 450))
 
 
 #Imagem da Entrada do P2 da Primeira Fase do Jogo
