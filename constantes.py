@@ -1,7 +1,7 @@
 from assets import img_jacare,img_canguru,img_polvo,img_rato,img_raposa
 import pygame
 
-FPS = 75
+FPS = 90
 
 clock = pygame.time.Clock()
 
