@@ -169,10 +169,12 @@ def TelaFinal_morteraposa (end):
 
         # ----- Gera saídas
         window.fill(BLACK)
-        window.blit(font_txt_game_over, (320,20))
-        window.blit(font_txt_tela_morte_raposa, (170,100))
-        window.blit(img_raposa_chorando_TelaFinal, (75,200))
-        window.blit(img_raposa_chorando_TelaFinal2, (600,200))
+        window.blit(font_txt_game_over, (315,15))
+        window.blit(font_txt_tela_morte_raposa, (120,100))
+        window.blit(img_raposa_chorando_TelaFinal, (285,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+        #window.blit(img_raposa_chorando_TelaFinal, (75,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+        #window.blit(img_raposa_chorando_TelaFinal2, (570,170))    # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
     return end
