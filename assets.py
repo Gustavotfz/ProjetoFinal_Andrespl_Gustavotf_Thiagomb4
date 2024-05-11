@@ -47,6 +47,7 @@ musica_jogo = pygame.mixer.Sound("Áudios/Missao_Impossivel.mp3")
 
 
 # ------- Assets das Imagens
+# Imagens Tela Inicial
 #Imagem do Insper da Tela Inicial
 img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
 img_TelaInicial = pygame.transform.scale(img_TelaInicial, (LARGURA_TELA, ALTURA_TELA))
@@ -55,14 +56,32 @@ img_TelaInicial = pygame.transform.scale(img_TelaInicial, (LARGURA_TELA, ALTURA_
 img_raposa_TelaInicial = pygame.image.load("Fotos/raposa_foto_tela_inicial.png")
 img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (450, 450))
 
-#Imagem da Raposa da Tela Final
+
+# Imagens Tela Final 1
+#Imagem do crocodilo da Tela Final 1
+img_crocodilo_TelaFinal = pygame.image.load("Fotos/telafinal_crocodilo.png")
+img_crocodilo_TelaFinal = pygame.transform.scale(img_crocodilo_TelaFinal, (350, 350))
+
+#Imagem do rato da Tela Final 1
+img_rato_TelaFinal = pygame.image.load("Fotos/telafinal_rato.png")
+img_rato_TelaFinal = pygame.transform.scale(img_rato_TelaFinal, (300, 300))
+
+#Imagem do canguru da Tela Final 1
+img_canguru_TelaFinal = pygame.image.load("Fotos/telafinal_canguru.png")
+img_canguru_TelaFinal = pygame.transform.scale(img_canguru_TelaFinal, (350, 350))
+
+
+# Imagens Tela Final 2
+#Imagem da Raposa da Tela Final 2
 img_raposa_chorando_TelaFinal = pygame.image.load("Fotos/raposa_chorando_telafinal.png")
 img_raposa_chorando_TelaFinal = pygame.transform.scale(img_raposa_chorando_TelaFinal, (450, 450))
 
-#Imagem 2 da Raposa da Tela Final
+#Imagem 2 da Raposa da Tela Final 2
 img_raposa_chorando_TelaFinal2 = pygame.image.load("Fotos/raposa_chorando_telafinal2.png")
 img_raposa_chorando_TelaFinal2 = pygame.transform.scale(img_raposa_chorando_TelaFinal2, (540, 756))
 
+
+# Imagens de fundo fases do jogo
 #Imagem da Entrada do P2 da Primeira Fase do Jogo
 img_fase1 = pygame.image.load("Fotos/fundo_nivel1.jpg")
 img_fase1 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
@@ -80,6 +99,7 @@ img_fase4 = pygame.image.load("Fotos/fundo_nivel4.jpg")
 img_fase4 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
 
 
+# Ícones do jogo
 #Ícone do Polvo para o Jogo
 img_polvo = pygame.image.load("Fotos/icone_polvo.png")
 img_polvo = pygame.transform.scale(img_polvo, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
@@ -99,6 +119,8 @@ img_jacare = pygame.transform.scale(img_jacare, (ALTURA_LARGURA_ICONES, ALTURA_L
 #Ícone da Raposa para o Jogo
 img_raposa = pygame.image.load("Fotos/icone_raposa.png")
 img_raposa = pygame.transform.scale(img_raposa, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
+
+
 
 # -------- Gerando Janela do Jogo
 window = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
