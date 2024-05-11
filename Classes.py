@@ -29,4 +29,3 @@ class Icones(pygame.sprite.Sprite):
             self.rect.y -= self.speedy
         else:
             self.rect.y += self.speedy
-            
