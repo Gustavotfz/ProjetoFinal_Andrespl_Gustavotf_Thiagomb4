@@ -140,3 +140,16 @@ def TelaGame (game):
             pygame.display.update()  # Mostra o novo frame para o jogador
 
     return end
+
+
+def TelaFinal(end):
+    pygame.display.set_caption(f'Fim de Jogo - {Nome_Jogo}')
+    while end:
+        # ----- Trata eventos
+        for event in pygame.event.get():
+        # ----- Verifica consequências
+            if event.type == pygame.QUIT:
+                end = False
+        window.fill((255, 255, 255))
+        window.blit(txt_Final,(0,0))
+        pygame.display.update()  # Mostra o novo frame para o jogador
