@@ -1,8 +1,8 @@
 import pygame
-ALTURA_TELA = 500
-LARGURA_TELA = 800
+ALTURA_TELA = 650
+LARGURA_TELA = (16/10)*ALTURA_TELA
 
-ALTURA_LARGURA_ICONES = 75
+ALTURA_LARGURA_ICONES = ALTURA_TELA//5
 
 pygame.init()
 
@@ -83,3 +83,6 @@ img_jacare = pygame.transform.scale(img_jacare, (ALTURA_LARGURA_ICONES, ALTURA_L
 #Ícone da Raposa para o Jogo
 img_raposa = pygame.image.load("Fotos/icone_raposa.png")
 img_raposa = pygame.transform.scale(img_raposa, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
+
+# -------- Gerando Janela do Jogo
+window = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))

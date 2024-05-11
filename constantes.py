@@ -1,8 +1,9 @@
 from assets import img_jacare,img_canguru,img_polvo,img_rato,img_raposa
+import pygame
 
-ALTURA_TELA = 500
-LARGURA_TELA = 800
 FPS = 75
+
+clock = pygame.time.Clock()
 
 #ALTURA_TELA_INICIAL= 600
 #LARGURA_TELA_INICIAL = 450
@@ -27,4 +28,4 @@ boss_final = [3,3,3,3,3,3,3,4,4,4]
 
 lista_icones_viloes = [img_polvo,img_canguru,img_rato,img_jacare]
 
-Tempo_Ar = 2 #Segundos
+Tempo_Ar = 2.5 #Segundos

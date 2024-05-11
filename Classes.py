@@ -12,24 +12,21 @@ class Icones(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = random.randint(0, LARGURA_TELA - ALTURA_LARGURA_ICONES)
         self.rect.y = ALTURA_TELA - ALTURA_LARGURA_ICONES - 1
-        self.maxHigh = random.randint(0, ALTURA_LARGURA_ICONES)
-        self.speedy = (2*(self.maxHigh - ALTURA_LARGURA_ICONES) - 1)/(FPS*Tempo_Ar)
-        print("Velocidade Vy", self.speedy)
+        self.maxHigh = random.randint(int((0.75)*ALTURA_LARGURA_ICONES), int((1.25)*ALTURA_LARGURA_ICONES))
+        self.speedy = (2*(ALTURA_TELA - self.maxHigh) - 1)/(FPS*Tempo_Ar)
         self.Yorientation = 0
-        if self.rect.x <= 400:
-            self.speedx = random.randint(int((401-self.rect.x)/(FPS*Tempo_Ar)), int((800-ALTURA_LARGURA_ICONES-self.rect.x)/(FPS*Tempo_Ar)))
+        if self.rect.x <= (LARGURA_TELA/2):
+            self.speedx = random.randint(int((((LARGURA_TELA/2)+1)-self.rect.x)/(FPS*Tempo_Ar)), int((LARGURA_TELA-ALTURA_LARGURA_ICONES-self.rect.x)/(FPS*Tempo_Ar)))
         else:
-            self.speedx = -(random.randint(0, int((400 - ALTURA_LARGURA_ICONES)/(FPS*Tempo_Ar))))
+            self.speedx = -(random.randint(0, int(((LARGURA_TELA/2) - ALTURA_LARGURA_ICONES)/(FPS*Tempo_Ar))))
     
     def update(self):
         # Atualizando a posição do meteoro
         self.rect.x += self.speedx
-        if self.rect.y == self.maxHigh:
+        if self.rect.y <= self.maxHigh:
             self.Yorientation = 1
         if self.Yorientation == 0:
-            self.rect.y += -self.speedy
+            self.rect.y -= self.speedy
         else:
             self.rect.y += self.speedy
-        # Se o meteoro passar do final da tela, volta para cima e sorteia
-        # novas posições e velocidades
             
