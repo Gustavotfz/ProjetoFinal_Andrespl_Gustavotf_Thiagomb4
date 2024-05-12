@@ -2,7 +2,7 @@ import pygame
 from constantes import *
 from assets import *
 from Classes import *
-
+#==============================================================================================================
 def TelaInicial ():
     game_status = True
     pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
@@ -34,6 +34,8 @@ def TelaInicial ():
         pygame.display.update()  # Mostra o novo frame para o jogador
     return game_status
 
+#==============================================================================================================
+
 def TelaPreTutorial(PreTutorial):
     Tutorial = PreTutorial
     pygame.display.set_caption(f'Pré-Tutorial - {Nome_Jogo}')
@@ -51,6 +53,8 @@ def TelaPreTutorial(PreTutorial):
         window.blit(txt_Pre_Tutorial,(0,0))
         pygame.display.update()  # Mostra o novo frame para o jogador
     return Tutorial
+
+#==============================================================================================================
 
 def TelaTutorial(Tutorial):
     game = Tutorial
@@ -70,6 +74,7 @@ def TelaTutorial(Tutorial):
         pygame.display.update()  # Mostra o novo frame para o jogador
     return game
 
+#==============================================================================================================
 
 def IconesSpriteGroup (n,fase):
     all_icones = pygame.sprite.Group()
@@ -89,6 +94,7 @@ def IconesSpriteGroup (n,fase):
         all_icones.add(icone)
     return all_icones
 
+#==============================================================================================================
 
 def AddPontucao (icone, score):
     if icone.image == img_polvo:
@@ -101,6 +107,8 @@ def AddPontucao (icone, score):
         score += 20
     return score
 
+#==============================================================================================================
+
 def DefineTela (fase):
     if fase == 1:
         window.blit(img_fase1, (0, 0)) #Preenche com a Imagem de Fundo
@@ -110,7 +118,9 @@ def DefineTela (fase):
         window.blit(img_fase3, (0, 0)) #Preenche com a Imagem de Fundo
     elif fase == 4:
         window.blit(img_fase4, (0, 0)) #Preenche com a Imagem de Fundo
-    
+
+#==============================================================================================================
+  
 def DefineFase (score,fase):
     if score >= 100 and fase == 1:
         fase = 2
@@ -119,6 +129,8 @@ def DefineFase (score,fase):
     elif score >= 400 and fase == 3:
         fase = 4
     return fase   
+
+#==============================================================================================================
 
 def TelaGame (game):
     end = game
@@ -182,6 +194,7 @@ def TelaGame (game):
 
     return end
 
+#==============================================================================================================
 
 def TelaFinal(end, tipo):
     pygame.display.set_caption(f'Fim de Jogo - {Nome_Jogo}')
