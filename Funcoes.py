@@ -131,8 +131,8 @@ def TelaGame (game):
                                 game = False
 
         for icone in all_icones:
-            if icone.rect.bottom >= ALTURA_TELA:
-                if icone != img_raposa:
+            if (icone.rect.bottom >= ALTURA_TELA):
+                if icone.image != img_raposa:
                     vidas -= 1
                 icone.kill()
         
