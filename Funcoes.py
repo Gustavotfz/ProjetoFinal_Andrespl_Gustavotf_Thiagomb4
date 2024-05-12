@@ -97,6 +97,7 @@ def TelaGame (game):
     # Criando um grupo de icones
     all_icones = IconesSpriteGroup(5)
 
+    vidas = 3
     score = 0
     while game:
         clock.tick(FPS)
@@ -115,11 +116,18 @@ def TelaGame (game):
                                 score = AddPontucao(icone,score)
                             else:
                                 pygame.time.delay(1000)
+                                TelaFinal_morteraposa(end)
                                 game = False
         
         for icone in all_icones:
             if icone.rect.bottom >= ALTURA_TELA:
                 icone.kill()
+                vidas -= 1
+        
+        if vidas == 0:
+            TelaFinal_principal(end)
+            game = False
+
         if len(all_icones) == 0:
             pygame.display.update()
             all_icones = IconesSpriteGroup(5)
@@ -135,6 +143,9 @@ def TelaGame (game):
 
         score_txt = score_font.render(str(score), True, (255,0,0))
         window.blit(score_txt, (10, 10))
+
+        vidas_txt = vidas_font.render(str(vidas), True, (255,0,0))
+        window.blit(vidas_txt, (50, 10))
 
         if game:
             pygame.display.update()  # Mostra o novo frame para o jogador

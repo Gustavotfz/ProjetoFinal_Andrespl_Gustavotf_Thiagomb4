@@ -42,6 +42,9 @@ font_txt_tela_final_vidas = font_txt_tela_final_vidas.render("Os mascotes invadi
 # Fonte do score board
 score_font = pygame.font.SysFont(None, 60)
 
+# Fonte das vidas
+vidas_font = pygame.font.SysFont(None, 60)
+
 
 
 # ------- Assets das Músicas de Fundo
