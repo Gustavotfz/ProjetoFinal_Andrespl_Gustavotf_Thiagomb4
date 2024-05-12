@@ -136,9 +136,9 @@ def TelaGame (game):
                     vidas -= 1
                 icone.kill()
         
-        #if vidas == 0:
-            #TelaFinal_principal(end)
-            #game = False
+        if vidas == 0:
+            TelaFinal_principal(end)
+            game = False
 
         if score >= 100 and fase == 1:
             fase = 2
