@@ -111,7 +111,7 @@ def DefineTela (fase):
     elif fase == 4:
         window.blit(img_fase4, (0, 0)) #Preenche com a Imagem de Fundo
     
-def DefineFase (score):
+def DefineFase (score,fase):
     if score >= 100 and fase == 1:
         fase = 2
     elif score >= 250 and fase == 2:
@@ -145,7 +145,7 @@ def TelaGame (game):
                                 score = AddPontucao(icone,score)
                             else:
                                 pygame.time.delay(1000)
-                                TelaFinal_morteraposa(end)
+                                TelaFinal_morteraposa()
                                 game = False
 
         for icone in all_icones:
@@ -166,7 +166,7 @@ def TelaGame (game):
 
         all_icones.update()
 
-        DefineTela(DefineFase(score))
+        DefineTela(DefineFase(score,fase))
 
         # Desenhando Ícones
         all_icones.draw(window)
@@ -182,7 +182,7 @@ def TelaGame (game):
 
     return end
 
-
+"""
 def TelaFinal(end):
     pygame.display.set_caption(f'Fim de Jogo - {Nome_Jogo}')
     while end:
@@ -194,18 +194,19 @@ def TelaFinal(end):
         window.fill((255, 255, 255))
         window.blit(txt_Final,(0,0))
         pygame.display.update()  # Mostra o novo frame para o jogador
+"""
 
-def TelaFinal_morteraposa (end):
-    end = True
-    pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
+def TelaFinal_morteraposa ():
+    status_tela_final = True
+    pygame.display.set_caption(f'Fim de Jogo - {Nome_Jogo}')
     # ----- Inicia estruturas de dados
     # ===== Loop principal =====
-    while end:
+    while status_tela_final:
         # ----- Trata eventos
         for event in pygame.event.get():
             # ----- Verifica consequências
             if event.type == pygame.QUIT:
-                end = False
+                status_tela_final = False
                 continue
 
         # ----- Gera saídas
@@ -218,19 +219,18 @@ def TelaFinal_morteraposa (end):
 
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
-    return end
 
-def TelaFinal_principal (end):
-    end = True
-    pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
+def TelaFinal_principal ():
+    status_tela_final = True
+    pygame.display.set_caption(f'Fim de Jogo - {Nome_Jogo}')
     # ----- Inicia estruturas de dados
     # ===== Loop principal =====
-    while end:
+    while status_tela_final:
         # ----- Trata eventos
         for event in pygame.event.get():
             # ----- Verifica consequências
             if event.type == pygame.QUIT:
-                end = False
+                status_tela_final = False
                 continue
 
         # ----- Gera saídas
@@ -243,4 +243,3 @@ def TelaFinal_principal (end):
 
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
-    return end
