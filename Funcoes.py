@@ -155,7 +155,7 @@ def TelaGame (game):
                 icone.kill()
         
         if vidas == 0:
-            TelaFinal_principal(end)
+            TelaFinal_principal()
             game = False
 
         if len(all_icones) == 0:
