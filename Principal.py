@@ -7,9 +7,6 @@ from Funcoes import *
 pygame.init()
 pygame.mixer.init()
 
-# ----- Gera tela inicial
-window = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
-
 # ----- Roda as Funções dos Diferentes Momentos de Jogo
 PreTutorial = TelaInicial()
 Tutorial = TelaPreTutorial(PreTutorial)

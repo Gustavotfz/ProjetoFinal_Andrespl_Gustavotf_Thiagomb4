@@ -6,6 +6,10 @@ ALTURA_LARGURA_ICONES = ALTURA_TELA//5
 
 pygame.init()
 
+# ----- Gera tela inicial
+window = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
+
+
 # ------- Assets dos Textos
 
 #Título da Tela Inicial
