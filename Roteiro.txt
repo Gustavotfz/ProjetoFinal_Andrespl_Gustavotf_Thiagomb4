@@ -29,8 +29,8 @@ ROTEIRO DETALHADO da TELA INICIAL:
 JOBS TO BE DONE:
  (feito) 1 - Trajetória de Vx
  (feito) 2 - Trajetória de Vy
-  3 - Cria as 3 vidas
- (em andamento) 4 - Icone some se bater no Fundo e perde 1 vida
+ (feito) 3 - Cria as 3 vidas
+ (feito) 4 - Icone some se bater no Fundo e perde 1 vida
  (feito) 5 - Icone Morre se clicar e adiciona ponto baseado em qual ícone é
   6 - Animação da morte de um ícone
  (feito) 7 - Perde o jogo se cortar a bomba
@@ -40,9 +40,10 @@ JOBS TO BE DONE:
  11 - Transição entre os níveis
  (feito) 12 - Tirar as fotos do cenário
  (feito) 13 - Fazer asset das fotos do cenário
- 14 - Colocar as Fotos como cenários
+ (feito) 14 - Colocar as Fotos como cenários
  15 - Colocar os sons de efeito de cada Animação (tiro quando acerta, grito da raposa)
  (feito) 16 - Randomizar a altura máxima
  17 - ***JumpScare
  18 - ***Pontuação do JumpScare
  (feito) 19 - 2 Telas de Game Over (matou a raposa e perdeu por vida)
+ 20 - Fase bonûs para coletar as raposas (entre-fases)
