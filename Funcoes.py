@@ -145,7 +145,7 @@ def TelaGame (game):
                                 score = AddPontucao(icone,score)
                             else:
                                 pygame.time.delay(1000)
-                                TelaFinal_morteraposa()
+                                TelaFinal(end,"raposa")
                                 game = False
 
         for icone in all_icones:
@@ -155,7 +155,7 @@ def TelaGame (game):
                 icone.kill()
         
         if vidas == 0:
-            TelaFinal_principal()
+            TelaFinal(end,"vidas")
             game = False
 
         if len(all_icones) == 0:
@@ -182,8 +182,8 @@ def TelaGame (game):
 
     return end
 
-"""
-def TelaFinal(end):
+
+def TelaFinal(end, tipo):
     pygame.display.set_caption(f'Fim de Jogo - {Nome_Jogo}')
     while end:
         # ----- Trata eventos
@@ -191,55 +191,20 @@ def TelaFinal(end):
         # ----- Verifica consequências
             if event.type == pygame.QUIT:
                 end = False
-        window.fill((255, 255, 255))
-        window.blit(txt_Final,(0,0))
-        pygame.display.update()  # Mostra o novo frame para o jogador
-"""
 
-def TelaFinal_morteraposa ():
-    status_tela_final = True
-    pygame.display.set_caption(f'Fim de Jogo - {Nome_Jogo}')
-    # ----- Inicia estruturas de dados
-    # ===== Loop principal =====
-    while status_tela_final:
-        # ----- Trata eventos
-        for event in pygame.event.get():
-            # ----- Verifica consequências
-            if event.type == pygame.QUIT:
-                status_tela_final = False
-                continue
+        if tipo == "raposa":
+            window.fill(BLACK)
+            window.blit(font_txt_game_over, (315,15))
+            window.blit(font_txt_tela_morte_raposa, (120,100))
+            window.blit(img_raposa_chorando_TelaFinal, (285,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+            #window.blit(img_raposa_chorando_TelaFinal, (75,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+            #window.blit(img_raposa_chorando_TelaFinal2, (570,170))    # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+        elif tipo == "vidas":
+            window.fill(BLACK)
+            window.blit(font_txt_game_over, (315,10))
+            window.blit(font_txt_tela_final_vidas, (75,95))
+            window.blit(img_crocodilo_TelaFinal, (1,230)) 
+            window.blit(img_canguru_TelaFinal, (650,200))
+            window.blit(img_rato_TelaFinal, (380,270))
 
-        # ----- Gera saídas
-        window.fill(BLACK)
-        window.blit(font_txt_game_over, (315,15))
-        window.blit(font_txt_tela_morte_raposa, (120,100))
-        window.blit(img_raposa_chorando_TelaFinal, (285,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
-        #window.blit(img_raposa_chorando_TelaFinal, (75,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
-        #window.blit(img_raposa_chorando_TelaFinal2, (570,170))    # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
-
-        # ----- Atualiza estado do jogo
-        pygame.display.update()  # Mostra o novo frame para o jogador
-
-def TelaFinal_principal ():
-    status_tela_final = True
-    pygame.display.set_caption(f'Fim de Jogo - {Nome_Jogo}')
-    # ----- Inicia estruturas de dados
-    # ===== Loop principal =====
-    while status_tela_final:
-        # ----- Trata eventos
-        for event in pygame.event.get():
-            # ----- Verifica consequências
-            if event.type == pygame.QUIT:
-                status_tela_final = False
-                continue
-
-        # ----- Gera saídas
-        window.fill(BLACK)
-        window.blit(font_txt_game_over, (315,10))
-        window.blit(font_txt_tela_final_vidas, (75,95))
-        window.blit(img_crocodilo_TelaFinal, (1,230)) 
-        window.blit(img_canguru_TelaFinal, (650,200))
-        window.blit(img_rato_TelaFinal, (380,270))
-
-        # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
