@@ -110,6 +110,15 @@ def DefineTela (fase):
         window.blit(img_fase3, (0, 0)) #Preenche com a Imagem de Fundo
     elif fase == 4:
         window.blit(img_fase4, (0, 0)) #Preenche com a Imagem de Fundo
+    
+def DefineFase (score):
+    if score >= 100 and fase == 1:
+        fase = 2
+    elif score >= 250 and fase == 2:
+        fase = 3
+    elif score >= 400 and fase == 3:
+        fase = 4
+    return fase   
 
 def TelaGame (game):
     end = game
@@ -149,13 +158,6 @@ def TelaGame (game):
             TelaFinal_principal(end)
             game = False
 
-        if score >= 100 and fase == 1:
-            fase = 2
-        elif score >= 250 and fase == 2:
-            fase = 3
-        elif score >= 400 and fase == 3:
-            fase = 4
-
         if len(all_icones) == 0:
             pygame.display.update()
             all_icones = IconesSpriteGroup(5,fase)
@@ -164,7 +166,7 @@ def TelaGame (game):
 
         all_icones.update()
 
-        DefineTela(fase)
+        DefineTela(DefineFase(score))
 
         # Desenhando Ícones
         all_icones.draw(window)
