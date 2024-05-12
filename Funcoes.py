@@ -101,6 +101,8 @@ def AddPontucao (icone, score):
         score += 20
     return score
 
+#def DefineTela (fase):
+
 
 def TelaGame (game):
     end = game
@@ -108,7 +110,7 @@ def TelaGame (game):
     # Criando um grupo de icones
     all_icones = IconesSpriteGroup(5,fase)
 
-    vidas = 3
+    vidas = 5
     score = 0
     while game:
         clock.tick(FPS)
@@ -150,13 +152,12 @@ def TelaGame (game):
         if len(all_icones) == 0:
             pygame.display.update()
             all_icones = IconesSpriteGroup(5,fase)
-            pygame.time.delay(1000)
+            #pygame.display.update()
+            #pygame.time.delay(1000)
 
         all_icones.update()
 
         # ----- Gera saídas
-        window.fill((0, 0, 0))  # Preenche com a cor branca
-
         if fase == 1:
             window.blit(img_fase1, (0, 0)) #Preenche com a Imagem de Fundo
         elif fase == 2:
