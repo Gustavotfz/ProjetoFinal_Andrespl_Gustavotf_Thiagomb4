@@ -118,11 +118,12 @@ def TelaGame (game):
                                 pygame.time.delay(1000)
                                 TelaFinal_morteraposa(end)
                                 game = False
-        
+
         for icone in all_icones:
             if icone.rect.bottom >= ALTURA_TELA:
+                if icone != img_raposa:
+                    vidas -= 1
                 icone.kill()
-                vidas -= 1
         
         if vidas == 0:
             TelaFinal_principal(end)

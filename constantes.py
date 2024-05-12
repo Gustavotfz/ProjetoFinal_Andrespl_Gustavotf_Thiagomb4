@@ -28,4 +28,4 @@ boss_final = [3,3,3,3,3,3,3,4,4,4]
 
 lista_icones_viloes = [img_polvo,img_canguru,img_rato,img_jacare]
 
-Tempo_Ar = 2.5 #Segundos
+Tempo_Ar = 3.5 #Segundos
