@@ -2,7 +2,9 @@ import pygame
 from constantes import *
 from assets import *
 from Classes import *
+
 #==============================================================================================================
+
 def TelaInicial ():
     game_status = True
     pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
