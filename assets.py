@@ -97,15 +97,15 @@ img_fase1 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
 
 #Imagem do Segundo andar do P2 da Segunda Fase do Jogo
 img_fase2 = pygame.image.load("Fotos/fundo_nivel2.jpg")
-img_fase2 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
+img_fase2 = pygame.transform.scale(img_fase2, (LARGURA_TELA, ALTURA_TELA))
 
 #Imagem do FabLab da Terceira Fase do Jogo
 img_fase3 = pygame.image.load("Fotos/fundo_nivel3.jpg")
-img_fase3 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
+img_fase3 = pygame.transform.scale(img_fase3, (LARGURA_TELA, ALTURA_TELA))
 
 #Imagem do Terraço do P2 da Quarta/Última Fase do Jogo
 img_fase4 = pygame.image.load("Fotos/fundo_nivel4.jpg")
-img_fase4 = pygame.transform.scale(img_fase1, (LARGURA_TELA, ALTURA_TELA))
+img_fase4 = pygame.transform.scale(img_fase4, (LARGURA_TELA, ALTURA_TELA))
 
 
 # Ícones do jogo

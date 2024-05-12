@@ -71,11 +71,21 @@ def TelaTutorial(Tutorial):
     return game
 
 
-def IconesSpriteGroup (n):
+def IconesSpriteGroup (n,fase):
     all_icones = pygame.sprite.Group()
     for i in range(n):
-        n_icone = random.randint(0,len(boss_n1)-1)
-        icone = Icones(Bosses[boss_n1[n_icone]])
+        if fase == 1:
+            n_icone = random.randint(0,len(boss_n1)-1)
+            icone = Icones(Bosses[boss_n1[n_icone]])
+        elif fase == 2:
+            n_icone = random.randint(0,len(boss_n2)-1)
+            icone = Icones(Bosses[boss_n2[n_icone]])
+        elif fase == 3:
+            n_icone = random.randint(0,len(boss_n3)-1)
+            icone = Icones(Bosses[boss_n3[n_icone]])
+        elif fase == 4:
+            n_icone = random.randint(0,len(boss_final)-1)
+            icone = Icones(Bosses[boss_final[n_icone]])
         all_icones.add(icone)
     return all_icones
 
@@ -94,8 +104,9 @@ def AddPontucao (icone, score):
 
 def TelaGame (game):
     end = game
+    fase = 1
     # Criando um grupo de icones
-    all_icones = IconesSpriteGroup(5)
+    all_icones = IconesSpriteGroup(5,fase)
 
     vidas = 3
     score = 0
@@ -125,20 +136,36 @@ def TelaGame (game):
                     vidas -= 1
                 icone.kill()
         
-        if vidas == 0:
-            TelaFinal_principal(end)
-            game = False
+        #if vidas == 0:
+            #TelaFinal_principal(end)
+            #game = False
+
+        if score >= 100 and fase == 1:
+            fase = 2
+        elif score >= 250 and fase == 2:
+            fase = 3
+        elif score >= 400 and fase == 3:
+            fase = 4
 
         if len(all_icones) == 0:
             pygame.display.update()
-            all_icones = IconesSpriteGroup(5)
+            all_icones = IconesSpriteGroup(5,fase)
             pygame.time.delay(1000)
 
         all_icones.update()
 
         # ----- Gera saídas
         window.fill((0, 0, 0))  # Preenche com a cor branca
-        window.blit(img_fase1, (0, 0)) #Preenche com a Imagem de Fundo
+
+        if fase == 1:
+            window.blit(img_fase1, (0, 0)) #Preenche com a Imagem de Fundo
+        elif fase == 2:
+            window.blit(img_fase2, (0, 0)) #Preenche com a Imagem de Fundo
+        elif fase == 3:
+            window.blit(img_fase3, (0, 0)) #Preenche com a Imagem de Fundo
+        elif fase == 4:
+            window.blit(img_fase4, (0, 0)) #Preenche com a Imagem de Fundo
+
         # Desenhando Ícones
         all_icones.draw(window)
 
@@ -146,7 +173,7 @@ def TelaGame (game):
         window.blit(score_txt, (10, 10))
 
         vidas_txt = vidas_font.render(str(vidas), True, (255,0,0))
-        window.blit(vidas_txt, (50, 10))
+        window.blit(vidas_txt, (100, 10))
 
         if game:
             pygame.display.update()  # Mostra o novo frame para o jogador
