@@ -41,7 +41,7 @@ JOBS TO BE DONE:
  (feito) 12 - Tirar as fotos do cenário
  (feito) 13 - Fazer asset das fotos do cenário
  (feito) 14 - Colocar as Fotos como cenários
- 15 - Colocar os sons de efeito de cada Animação (tiro quando acerta, grito da raposa)
+ 15 - Colocar os sons de efeito de cada Animação (tiro quando acerta, grito da raposa, tiro errado)
  (feito) 16 - Randomizar a altura máxima
  17 - ***JumpScare
  18 - ***Pontuação do JumpScare
