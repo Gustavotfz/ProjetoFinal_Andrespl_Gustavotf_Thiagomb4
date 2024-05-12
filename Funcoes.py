@@ -101,8 +101,15 @@ def AddPontucao (icone, score):
         score += 20
     return score
 
-#def DefineTela (fase):
-
+def DefineTela (fase):
+    if fase == 1:
+        window.blit(img_fase1, (0, 0)) #Preenche com a Imagem de Fundo
+    elif fase == 2:
+        window.blit(img_fase2, (0, 0)) #Preenche com a Imagem de Fundo
+    elif fase == 3:
+        window.blit(img_fase3, (0, 0)) #Preenche com a Imagem de Fundo
+    elif fase == 4:
+        window.blit(img_fase4, (0, 0)) #Preenche com a Imagem de Fundo
 
 def TelaGame (game):
     end = game
@@ -157,15 +164,7 @@ def TelaGame (game):
 
         all_icones.update()
 
-        # ----- Gera saídas
-        if fase == 1:
-            window.blit(img_fase1, (0, 0)) #Preenche com a Imagem de Fundo
-        elif fase == 2:
-            window.blit(img_fase2, (0, 0)) #Preenche com a Imagem de Fundo
-        elif fase == 3:
-            window.blit(img_fase3, (0, 0)) #Preenche com a Imagem de Fundo
-        elif fase == 4:
-            window.blit(img_fase4, (0, 0)) #Preenche com a Imagem de Fundo
+        DefineTela(fase)
 
         # Desenhando Ícones
         all_icones.draw(window)
