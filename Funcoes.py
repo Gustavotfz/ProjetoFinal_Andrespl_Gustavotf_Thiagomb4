@@ -194,11 +194,11 @@ def TelaFinal_principal (end):
 
         # ----- Gera saídas
         window.fill(BLACK)
-        window.blit(font_txt_game_over, (315,15))
-        window.blit(font_txt_tela_final_vidas, (200,35))
-        window.blit(img_crocodilo_TelaFinal, (285,200)) 
-        window.blit(img_canguru_TelaFinal, (285,200))
-        window.blit(img_rato_TelaFinal, (285,200))
+        window.blit(font_txt_game_over, (315,10))
+        window.blit(font_txt_tela_final_vidas, (75,95))
+        window.blit(img_crocodilo_TelaFinal, (1,230)) 
+        window.blit(img_canguru_TelaFinal, (650,200))
+        window.blit(img_rato_TelaFinal, (380,270))
 
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador

@@ -35,7 +35,7 @@ font_txt_tela_morte_raposa = font_txt_tela_morte_raposa.render("Você matou a ra
 font_txt_game_over = pygame.font.SysFont("cambria", 76, True)
 font_txt_game_over = font_txt_game_over.render("GAME OVER", True, (255,0,0))
 #Título da Tela Final (perdeu as vidas)
-font_txt_tela_final_vidas = pygame.font.SysFont("cambria", 66, True)
+font_txt_tela_final_vidas = pygame.font.SysFont("cambria", 56, True)
 font_txt_tela_final_vidas = font_txt_tela_final_vidas.render("Os mascotes invadiram a faculdade!", True, (255,250,205))
 
 
@@ -66,15 +66,15 @@ img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (450, 45
 # Imagens Tela Final 1
 #Imagem do crocodilo da Tela Final 1
 img_crocodilo_TelaFinal = pygame.image.load("Fotos/telafinal_crocodilo.png")
-img_crocodilo_TelaFinal = pygame.transform.scale(img_crocodilo_TelaFinal, (350, 350))
+img_crocodilo_TelaFinal = pygame.transform.scale(img_crocodilo_TelaFinal, (450, 450))
 
 #Imagem do rato da Tela Final 1
 img_rato_TelaFinal = pygame.image.load("Fotos/telafinal_rato.png")
-img_rato_TelaFinal = pygame.transform.scale(img_rato_TelaFinal, (300, 300))
+img_rato_TelaFinal = pygame.transform.scale(img_rato_TelaFinal, (400, 400))
 
 #Imagem do canguru da Tela Final 1
 img_canguru_TelaFinal = pygame.image.load("Fotos/telafinal_canguru.png")
-img_canguru_TelaFinal = pygame.transform.scale(img_canguru_TelaFinal, (350, 350))
+img_canguru_TelaFinal = pygame.transform.scale(img_canguru_TelaFinal, (450, 450))
 
 
 # Imagens Tela Final 2
