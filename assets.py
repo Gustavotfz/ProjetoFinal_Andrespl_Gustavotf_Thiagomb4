@@ -109,6 +109,11 @@ img_raposa_chorando_TelaFinal = pygame.transform.scale(img_raposa_chorando_TelaF
 img_raposa_chorando_TelaFinal2 = pygame.image.load("Fotos/raposa_chorando_telafinal2.png")
 img_raposa_chorando_TelaFinal2 = pygame.transform.scale(img_raposa_chorando_TelaFinal2, (540, 756))
 
+# Imagens Tela Bônus 
+#Imagem da cesta
+img_cesta = pygame.image.load("Fotos/cesta_fasebonus.png")
+img_cesta = pygame.transform.scale(img_cesta, (ALTURA_LARGURA_ICONES+20, ALTURA_LARGURA_ICONES+20))
+
 
 # Imagens de fundo fases do jogo
 #Imagem da Entrada do P2 da Primeira Fase do Jogo

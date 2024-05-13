@@ -239,6 +239,20 @@ def FaseBonus(end):
         # ----- Verifica consequências
             if event.type == pygame.QUIT:
                 end = False
+
+            if event.type == pygame.KEYDOWN:
+            # Dependendo da tecla, altera a velocidade.
+                if event.key == pygame.K_LEFT:
+                    player.speedx -= 8
+                if event.key == pygame.K_RIGHT:
+                    player.speedx += 8
+            # Verifica se soltou alguma tecla.
+            if event.type == pygame.KEYUP:
+                # Dependendo da tecla, altera a velocidade.
+                if event.key == pygame.K_LEFT:
+                    player.speedx += 8
+                if event.key == pygame.K_RIGHT:
+                    player.speedx -= 8
                 
             
 

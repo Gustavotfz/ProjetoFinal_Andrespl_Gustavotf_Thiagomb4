@@ -30,3 +30,24 @@ class Icones(pygame.sprite.Sprite):
             self.rect.y -= self.speedy
         else:
             self.rect.y += self.speedy
+
+class Cesta(pygame.sprite.Sprite):
+    def __init__(self, img):
+        # Construtor da classe mãe (Sprite).
+        pygame.sprite.Sprite.__init__(self)
+
+        self.image = img
+        self.rect = self.image.get_rect()
+        self.rect.centerx = LARGURA_TELA / 2
+        self.rect.bottom = ALTURA_TELA - 10
+        self.speedx = 0
+
+    def update(self):
+        # Atualização da posição da nave
+        self.rect.x += self.speedx
+
+        # Mantem dentro da tela
+        if self.rect.right > LARGURA_TELA:
+            self.rect.right = LARGURA_TELA
+        if self.rect.left < 0:
+            self.rect.left = 0
