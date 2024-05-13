@@ -5,10 +5,9 @@ LARGURA_TELA = (16/10)*ALTURA_TELA
 ALTURA_LARGURA_ICONES = ALTURA_TELA//5
 
 pygame.init()
-
 # ----- Gera tela inicial
 window = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
-
+pygame.mixer.init()
 
 # ------- Assets dos Textos
 
@@ -61,16 +60,16 @@ vidas_font = pygame.font.SysFont(None, 60)
 
 # ------- Assets das Músicas de Fundo
 #Música da Tela Inicial - Back in Black
-musica_tela_inicial = pygame.mixer.Sound('Áudios/ACDC - Back In Black (Official Music Video).mp3')
+musica_tela_inicial = pygame.mixer.Sound('audios/ACDC - Back In Black (Official Music Video).mp3')
 #Música do Jogo - Missão Impossível
-musica_jogo = pygame.mixer.Sound("Áudios/Missao_Impossivel.mp3")
+musica_jogo = pygame.mixer.Sound("audios/Missao_Impossivel.mp3")
 
 
 # ------- Assets Sons do Jogo
 # som do tiro quando acerta
-tiro_acerta_sound = pygame.mixer.Sound('Áudios/Sons_Pygame/Pistola22cal.mp3')
+tiro_acerta_sound = pygame.mixer.Sound('audios/a.wav')
 # som do tiro quando erra
-tiro_erra_sound = pygame.mixer.Sound('Áudios/Sons_Pygame/cartoon_tiro.mp3')
+# tiro_erra_sound = pygame.mixer.Sound('audios/cartoon_tiro.mp3')
 pygame.mixer.music.set_volume(0.4)
 # foi??
 

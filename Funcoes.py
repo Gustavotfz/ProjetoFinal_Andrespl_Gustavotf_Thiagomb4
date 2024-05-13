@@ -25,6 +25,9 @@ def TelaInicial ():
                 tela_inicial = False
                 musica_tela_inicial.stop()
                 continue
+            else:
+                musica_tela_inicial.stop()
+                continue
 
         # ----- Gera saídas
         window.blit(img_TelaInicial, (0,0))
@@ -101,6 +104,7 @@ def IconesSpriteGroup (n,fase):
 def AddPontucao (icone, score):
     if icone.image == img_polvo:
         score += 5
+        tiro_acerta_sound.play(-1)
     elif icone.image == img_canguru:
         score += 10
     elif icone.image == img_rato:
