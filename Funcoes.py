@@ -235,6 +235,7 @@ def TelaFinal(end, tipo):
 
 def FaseBonus(end):
     cesta = Cesta(img_cesta)
+    
 
     while end:
         # ----- Trata eventos
@@ -257,6 +258,13 @@ def FaseBonus(end):
                 if event.key == pygame.K_RIGHT:
                     cesta.speedx -= 8
         cesta.update()
-        
+
+        for icone in all_icones:
+            hits = pygame.sprite.spritecollide(cesta, all_icones, True)
+            if len(hits) > 0:
+                icone.kill()
+                points = 30
+                score = AddPontucao(points,score)
+
 
         pygame.display.update()  # Mostra o novo frame para o jogador
