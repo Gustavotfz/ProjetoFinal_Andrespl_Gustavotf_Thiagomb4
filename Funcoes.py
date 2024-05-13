@@ -3,6 +3,10 @@ from constantes import *
 from assets import *
 from Classes import *
 
+#tiro_acerta_sound.play(1)
+
+# tiro_acerta_sound.stop
+pygame.mixer.init()
 #==============================================================================================================
 
 def TelaInicial ():
@@ -104,7 +108,6 @@ def IconesSpriteGroup (n,fase):
 def AddPontucao (icone, score):
     if icone.image == img_polvo:
         score += 5
-        tiro_acerta_sound.play(-1)
     elif icone.image == img_canguru:
         score += 10
     elif icone.image == img_rato:
