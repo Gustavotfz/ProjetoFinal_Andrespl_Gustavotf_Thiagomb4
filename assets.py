@@ -67,7 +67,7 @@ musica_jogo = pygame.mixer.Sound("audios/Missao_Impossivel.mp3")
 
 # ------- Assets Sons do Jogo
 # som do tiro quando acerta
-tiro_acerta_sound = pygame.mixer.Sound('audios/a.wav')
+tiro_acerta_sound = pygame.mixer.Sound('audios/tiro.wav')
 # som do tiro quando erra
 # tiro_erra_sound = pygame.mixer.Sound('audios/cartoon_tiro.mp3')
 pygame.mixer.music.set_volume(0.4)
