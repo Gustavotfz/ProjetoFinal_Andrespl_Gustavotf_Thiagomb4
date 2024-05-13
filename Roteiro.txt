@@ -48,4 +48,3 @@ JOBS TO BE DONE:
     (feito) 19 - 2 Telas de Game Over (matou a raposa e perdeu por vida)
  20 - Fase bonûs para coletar as raposas (entre-fases)
  21 - Trajétoria dos ícones em forma de parábola
- 22 - Item aleatório
