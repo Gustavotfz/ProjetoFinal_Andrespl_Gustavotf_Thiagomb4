@@ -172,6 +172,7 @@ def TelaGame (game):
             TelaFinal(end,"vidas")
             game = False
 
+        fase = DefineFase(score,fase)
         if len(all_icones) == 0:
             pygame.display.update()
             all_icones = IconesSpriteGroup(5,fase)
@@ -180,7 +181,7 @@ def TelaGame (game):
 
         all_icones.update()
 
-        DefineTela(DefineFase(score,fase))
+        DefineTela(fase)
 
         # Desenhando Ícones
         all_icones.draw(window)

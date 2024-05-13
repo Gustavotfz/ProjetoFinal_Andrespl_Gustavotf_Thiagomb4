@@ -52,10 +52,10 @@ vidas_font = pygame.font.SysFont(None, 60)
 
 # ------- Assets dos Sons do Jogo
 # som do tiro quando acerta
-tiro_acerta_sound = pygame.mixer.init('Áudios/Pistola22cal.mp3')
+#tiro_acerta_sound = pygame.mixer.init('Áudios/Pistola22cal.mp3')
 # som do tiro quando erra
-tiro_erra_sound = pygame.mixer.init('Áudios/cartoon_tiro.mp3')
-pygame.mixer.music.set_volume(0.4)
+#tiro_erra_sound = pygame.mixer.init('Áudios/cartoon_tiro.mp3')
+#pygame.mixer.music.set_volume(0.4)
 
 
 
