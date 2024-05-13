@@ -4,7 +4,7 @@ from constantes import *
 from assets import *
 
 class Icones(pygame.sprite.Sprite):
-    def __init__(self, img, tiro_acerta_sound):
+    def __init__(self, img):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
 
