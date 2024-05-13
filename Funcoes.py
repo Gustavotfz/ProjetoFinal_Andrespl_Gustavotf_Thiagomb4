@@ -153,7 +153,7 @@ def TelaGame (game):
             elif (event.type == pygame.MOUSEBUTTONDOWN):
                 if (event.button == 1):
                     for icone in all_icones:   
-                        if icone.rect.collidepoint(event.pos):
+                        if icone.rect.collidepoint(event.pos,pygame.sprite.collide_mask):
                             if (icone.image in lista_icones_viloes):
                                 icone.kill()
                                 score = AddPontucao(icone,score)
@@ -222,5 +222,16 @@ def TelaFinal(end, tipo):
             window.blit(img_crocodilo_TelaFinal, (1,230)) 
             window.blit(img_canguru_TelaFinal, (650,200))
             window.blit(img_rato_TelaFinal, (380,270))
+
+        pygame.display.update()  # Mostra o novo frame para o jogador
+
+def FaseBonus(end):
+    while end:
+        # ----- Trata eventos
+        for event in pygame.event.get():
+        # ----- Verifica consequências
+            if event.type == pygame.QUIT:
+                end = False
+            
 
         pygame.display.update()  # Mostra o novo frame para o jogador
