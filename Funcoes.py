@@ -166,6 +166,7 @@ def TelaGame (game):
                                 tiro_acerta_sound.play()
                                 score = AddPontucao(icone,score)
                             else:
+                                # som de morte raposa
                                 pygame.time.delay(1000)
                                 TelaFinal(end,"raposa")
                                 game = False
@@ -223,6 +224,7 @@ def TelaFinal(end, tipo):
             window.blit(img_raposa_chorando_TelaFinal, (285,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
             #window.blit(img_raposa_chorando_TelaFinal, (75,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
             #window.blit(img_raposa_chorando_TelaFinal2, (570,170))    # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+        
         elif tipo == "vidas":
             window.fill(BLACK)
             window.blit(font_txt_game_over, (315,10))
