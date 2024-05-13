@@ -234,6 +234,8 @@ def TelaFinal(end, tipo):
         pygame.display.update()  # Mostra o novo frame para o jogador
 
 def FaseBonus(end):
+    cesta = Cesta(img_cesta)
+
     while end:
         # ----- Trata eventos
         for event in pygame.event.get():
@@ -244,17 +246,17 @@ def FaseBonus(end):
             if event.type == pygame.KEYDOWN:
             # Dependendo da tecla, altera a velocidade.
                 if event.key == pygame.K_LEFT:
-                    player.speedx -= 8
+                    cesta.speedx -= 8
                 if event.key == pygame.K_RIGHT:
-                    player.speedx += 8
+                    cesta.speedx += 8
             # Verifica se soltou alguma tecla.
             if event.type == pygame.KEYUP:
                 # Dependendo da tecla, altera a velocidade.
                 if event.key == pygame.K_LEFT:
-                    player.speedx += 8
+                    cesta.speedx += 8
                 if event.key == pygame.K_RIGHT:
-                    player.speedx -= 8
-                
-            
+                    cesta.speedx -= 8
+        cesta.update()
+        
 
         pygame.display.update()  # Mostra o novo frame para o jogador
