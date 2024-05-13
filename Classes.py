@@ -9,6 +9,7 @@ class Icones(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
 
         self.image = img
+        self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
         self.rect.x = random.randint(0, LARGURA_TELA - ALTURA_LARGURA_ICONES)
         self.rect.y = ALTURA_TELA - ALTURA_LARGURA_ICONES - 1
