@@ -166,7 +166,7 @@ def TelaGame (game):
                                 tiro_acerta_sound.play()
                                 score = AddPontucao(icone,score)
                             else:
-                                # som de morte raposa
+                                grito_raposinha.play()
                                 pygame.time.delay(1000)
                                 TelaFinal(end,"raposa")
                                 game = False
