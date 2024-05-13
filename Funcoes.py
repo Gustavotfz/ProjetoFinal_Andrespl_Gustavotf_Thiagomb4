@@ -163,6 +163,7 @@ def TelaGame (game):
                         if icone.rect.collidepoint(event.pos):
                             if (icone.image in lista_icones_viloes):
                                 icone.kill()
+                                tiro_acerta_sound.play()
                                 score = AddPontucao(icone,score)
                             else:
                                 pygame.time.delay(1000)
