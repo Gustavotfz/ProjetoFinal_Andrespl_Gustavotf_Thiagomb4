@@ -66,6 +66,15 @@ musica_tela_inicial = pygame.mixer.Sound('Áudios/ACDC - Back In Black (Official
 musica_jogo = pygame.mixer.Sound("Áudios/Missao_Impossivel.mp3")
 
 
+# ------- Assets Sons do Jogo
+# som do tiro quando acerta
+tiro_acerta_sound = pygame.mixer.Sound('Áudios/Pistola22cal.mp3')
+# som do tiro quando erra
+tiro_erra_sound = pygame.mixer.Sound('Áudios/cartoon_tiro.mp3')
+pygame.mixer.music.set_volume(0.4)
+# foi??
+
+
 
 # ------- Assets das Imagens
 # Imagens Tela Inicial
