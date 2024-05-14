@@ -279,4 +279,4 @@ def TelaRanking (status_ranking, score):
                 pontuacao_nome = linha.split(':')
                 pontuacao = pontuacao_nome[0]
                 nome = pontuacao_nome[1][1:]
-                if 
+                #if 
