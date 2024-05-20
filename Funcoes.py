@@ -276,12 +276,22 @@ def FaseBonus(end):
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
+"""
 def TelaRanking (status_ranking, score):
+    window.fill(WHITE)
+    window.blit(font_txt_game_over, (315,10))
+    window.blit(font_txt_tela_ranking, (315,10))
     while status_ranking:
+        for event in pygame.event.get():
+            if event 
         with open('Ranking.txt', 'r') as arquivo:
             linhas = arquivo.readlines()
-            for linha in linhas:
-                pontuacao_nome = linha.split(':')
+            for indice_linha in range(len(linhas)):
+                pontuacao_nome = linhas[indice_linha].split(':')
                 pontuacao = pontuacao_nome[0]
-                nome = pontuacao_nome[1][1:]
-                #if 
+                nome = pontuacao_nome[1]
+                if pontuacao < score:
+                    window.fill(WHITE)
+                    window.blit(font_txt_game_over, (315,10))
+                    window.blit(font_txt_game_over, (315,10))
+                    """
