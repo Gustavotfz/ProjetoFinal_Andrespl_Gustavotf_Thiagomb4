@@ -2,7 +2,7 @@ import pygame
 from constantes import *
 from assets import *
 from Classes import *
-from moviepy.editor import VideoFileClip
+#from moviepy.editor import VideoFileClip
 
 #tiro_acerta_sound.play(1)
 
