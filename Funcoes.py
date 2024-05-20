@@ -171,6 +171,7 @@ def TelaGame (game):
                                 pygame.time.delay(1000)
                                 TelaFinal(end,"raposa")
                                 game = False
+                                
 
         for icone in all_icones:
             if (icone.rect.bottom >= ALTURA_TELA):
