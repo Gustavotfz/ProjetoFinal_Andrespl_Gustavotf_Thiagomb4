@@ -2,6 +2,7 @@ import pygame
 from constantes import *
 from assets import *
 from Classes import *
+#from moviepy.editor import VideoFileClip
 
 #tiro_acerta_sound.play(1)
 
@@ -9,18 +10,14 @@ from Classes import *
 pygame.mixer.init()
 #==============================================================================================================
 
-def TelaInicial():
+def TelaInicial ():
     game_status = True
     pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
-    
     # ----- Inicia estruturas de dados
     tela_inicial = True
-    
-    # Tocar a música uma vez antes do loop de eventos
-    musica_tela_inicial.play(-1)
-    
     # ===== Loop principal =====
     while tela_inicial:
+        musica_tela_inicial.play(-1)
         # ----- Trata eventos
         for event in pygame.event.get():
             # ----- Verifica consequências
@@ -29,22 +26,23 @@ def TelaInicial():
                 game_status = False
                 musica_tela_inicial.stop()
                 continue
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            elif event.type == pygame.KEYDOWN:
                 tela_inicial = False
+                musica_tela_inicial.stop()
+                continue
+            else:
                 musica_tela_inicial.stop()
                 continue
 
         # ----- Gera saídas
-        window.blit(img_TelaInicial, (0, 0))
-        window.blit(txt_TelaInicial, (270, 20))
-        window.blit(txt_Pressioneqlqrbotao, (180, 120))
-        window.blit(img_raposa_TelaInicial, (150, 200))
+        window.blit(img_TelaInicial, (0,0))
+        window.blit(txt_TelaInicial, (270,20))
+        window.blit(txt_Pressioneqlqrbotao, (180,120))
+        window.blit(img_raposa_TelaInicial, (150,200))
 
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
-    
     return game_status
-
 
 #==============================================================================================================
 
@@ -59,7 +57,7 @@ def TelaPreTutorial(PreTutorial):
                 PreTutorial = False
                 Tutorial = False
                 musica_jogo.stop()
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            elif event.type == pygame.KEYDOWN:
                 PreTutorial = False
         window.fill((255, 255, 255))
         window.blit(txt_Pre_Tutorial,(0,0))
@@ -79,7 +77,7 @@ def TelaTutorial(Tutorial):
                 Tutorial = False
                 game = False
                 musica_jogo.stop()
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            elif event.type == pygame.KEYDOWN:
                 Tutorial = False
         window.fill((255, 255, 255))
         window.blit(txt_Tutorial,(0,0))
@@ -169,7 +167,7 @@ def TelaGame (game):
                                 tiro_acerta_sound.play()
                                 score = AddPontucao(icone,score)
                             else:
-                                grito_raposinha.play()
+                                # som de morte raposa
                                 pygame.time.delay(1000)
                                 TelaFinal(end,"raposa")
                                 game = False
@@ -241,8 +239,7 @@ def PlacarFinal(end,score):
     while end:
         x = 1
 
-
-def FaseBonus(end):
+def FaseBonus(end, all_icones):
     cesta = Cesta(img_cesta)
     
 
@@ -278,12 +275,22 @@ def FaseBonus(end):
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
+"""
 def TelaRanking (status_ranking, score):
+    window.fill(WHITE)
+    window.blit(font_txt_game_over, (315,10))
+    window.blit(font_txt_tela_ranking, (315,10))
     while status_ranking:
+        for event in pygame.event.get():
+            if event 
         with open('Ranking.txt', 'r') as arquivo:
             linhas = arquivo.readlines()
-            for linha in linhas:
-                pontuacao_nome = linha.split(':')
+            for indice_linha in range(len(linhas)):
+                pontuacao_nome = linhas[indice_linha].split(':')
                 pontuacao = pontuacao_nome[0]
-                nome = pontuacao_nome[1][1:]
-                #if 
+                nome = pontuacao_nome[1]
+                if pontuacao < score:
+                    window.fill(WHITE)
+                    window.blit(font_txt_game_over, (315,10))
+                    window.blit(font_txt_game_over, (315,10))
+                    """
