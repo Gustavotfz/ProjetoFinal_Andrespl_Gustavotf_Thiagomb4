@@ -272,16 +272,28 @@ def FaseBonus(end, all_icones):
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
-"""
+def AlteraNome (nome_ranking, letra):
+    nome_ranking += letra
+    txt_ranking = font_txt_ranking.render(nome_ranking, True, (255,0,0))
+
 def TelaRanking (status_ranking, score):
     window.fill(WHITE)
-    window.blit(font_txt_game_over, (315,10))
-    window.blit(font_txt_tela_ranking, (315,10))
+    nome_ranking = ""
     while status_ranking:
         for event in pygame.event.get():
-            if event 
-        with open('Ranking.txt', 'r') as arquivo:
+            if event == pygame.KEYDOWN:
+                AlteraNome(nome_ranking, pygame.key.name(event.key))
+        with open('ranking.txt', 'r') as arquivo:
             linhas = arquivo.readlines()
+            linha = 0
+            naoColocouNome = True
+            while linha < linhas and naoColocouNome:
+                pontuacao_nome = linhas[linha].split(':')
+                pontuacao = pontuacao_nome[1]
+                if pontuacao < score:
+                    naoColocouNome = False
+                    
+            """
             for indice_linha in range(len(linhas)):
                 pontuacao_nome = linhas[indice_linha].split(':')
                 pontuacao = pontuacao_nome[0]

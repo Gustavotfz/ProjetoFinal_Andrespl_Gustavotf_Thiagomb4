@@ -44,6 +44,8 @@ font_quer_jogar = font_quer_jogar.render("Sim, pressione S", True, (255,250,205)
 font_nao_quer_jogar = pygame.font.SysFont("cambria", 40, True)
 font_nao_quer_jogar = font_nao_quer_jogar.render("Não, pressione N", True, (255,250,205))
 
+#RANKING
+font_txt_ranking = pygame.font.SysFont("cambria", 76, True)
 
 #GAME OVER
 font_txt_game_over = pygame.font.SysFont("cambria", 76, True)
