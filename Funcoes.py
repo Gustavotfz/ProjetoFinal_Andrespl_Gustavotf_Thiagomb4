@@ -77,6 +77,7 @@ def TelaTutorial(Tutorial):
                 Tutorial = False
                 game = False
                 musica_jogo.stop()
+                
             elif event.type == pygame.KEYDOWN:
                 Tutorial = False
         window.fill((255, 255, 255))
@@ -170,7 +171,11 @@ def TelaGame (game):
                                 # som de morte raposa
                                 pygame.time.delay(1000)
                                 TelaFinal(end,"raposa")
+                                    
+                                TelaPontuacao(end)
+                                #if TelaPontuacao(end) == False:
                                 game = False
+                                    
                                 
 
         for icone in all_icones:
@@ -181,6 +186,8 @@ def TelaGame (game):
         
         if vidas == 0:
             TelaFinal(end,"vidas")
+            TelaPontuacao(end) 
+            #if TelaPontuacao(end) == False:
             game = False
 
         fase = DefineFase(score,fase)
@@ -218,6 +225,8 @@ def TelaFinal(end, tipo):
         # ----- Verifica consequências
             if event.type == pygame.QUIT:
                 end = False
+            elif event.type == pygame.KEYDOWN:
+                end = False
 
         if tipo == "raposa":
             window.blit(img_TeladeMorte_raposa, (0, 0))
@@ -227,14 +236,31 @@ def TelaFinal(end, tipo):
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
-def PlacarFinal(end,score):
+def TelaPontuacao(end):
     pygame.display.set_caption(f'Pontuação final - {Nome_Jogo}')
+    
     while end:
-        x = 1
+        # ----- Trata eventos
+        for event in pygame.event.get():
+        # ----- Verifica consequências
+            if event.type == pygame.QUIT:
+                end = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_s:
+                    return True
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_n:
+                    return False
+
+        window.blit(img_fase1, (0, 0))
+
+        pygame.display.update()  # Mostra o novo frame para o jogador
+    
+    # ===== Finalização =====
+    pygame.quit()  # Função do PyGame que finaliza os recursos utilizados
 
 def FaseBonus(end, all_icones):
     cesta = Cesta(img_cesta)
-    
 
     while end:
         # ----- Trata eventos
