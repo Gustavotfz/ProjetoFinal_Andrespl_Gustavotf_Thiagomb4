@@ -34,6 +34,17 @@ txt_Final = font_txt_Final.render("Jogo", True, (255,0,0))
 #Título da Tela Final (matou a raposa)
 font_txt_tela_morte_raposa = pygame.font.SysFont("cambria", 66, True)
 font_txt_tela_morte_raposa = font_txt_tela_morte_raposa.render("Você matou a raposa bebê!", True, (255,250,205))
+# Escrito de deseja jogar de novo
+font_deseja_jogar = pygame.font.SysFont("cambria", 45, True)
+font_deseja_jogar = font_deseja_jogar.render("Deseja jogar de novo?", True, (255,250,205))
+
+font_quer_jogar = pygame.font.SysFont("cambria", 40, True)
+font_quer_jogar = font_quer_jogar.render("Sim, pressione S", True, (255,250,205))
+
+font_nao_quer_jogar = pygame.font.SysFont("cambria", 40, True)
+font_nao_quer_jogar = font_nao_quer_jogar.render("Não, pressione N", True, (255,250,205))
+
+
 #GAME OVER
 font_txt_game_over = pygame.font.SysFont("cambria", 76, True)
 font_txt_game_over = font_txt_game_over.render("GAME OVER", True, (255,0,0))
@@ -68,7 +79,7 @@ musica_jogo = pygame.mixer.Sound("audios/Missao_Impossivel.mp3")
 # ------- Assets Sons do Jogo
 # som do tiro quando acerta
 tiro_acerta_sound = pygame.mixer.Sound('audios/tiro.wav')
-tiro_raposinha = pygame.mixer.Sound('audios/grito_classico.wav')
+grito_raposinha = pygame.mixer.Sound('audios/grito_classico.wav')
 # som do tiro quando erra
 # tiro_erra_sound = pygame.mixer.Sound('audios/cartoon_tiro.mp3')
 pygame.mixer.music.set_volume(0.4)
