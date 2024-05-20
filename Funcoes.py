@@ -171,6 +171,7 @@ def TelaGame (game):
                                 pygame.time.delay(1000)
                                 TelaFinal(end,"raposa")
                                 game = False
+                                
 
         for icone in all_icones:
             if (icone.rect.bottom >= ALTURA_TELA):
@@ -219,22 +220,17 @@ def TelaFinal(end, tipo):
                 end = False
 
         if tipo == "raposa":
-            window.fill(BLACK)
-            window.blit(font_txt_game_over, (315,15))
-            window.blit(font_txt_tela_morte_raposa, (120,100))
-            window.blit(img_raposa_chorando_TelaFinal, (285,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
-            #window.blit(img_raposa_chorando_TelaFinal, (75,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
-            #window.blit(img_raposa_chorando_TelaFinal2, (570,170))    # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
-        
+            window.blit(img_TeladeMorte_raposa, (0, 0))
+
         elif tipo == "vidas":
-            window.fill(BLACK)
-            window.blit(font_txt_game_over, (315,10))
-            window.blit(font_txt_tela_final_vidas, (75,95))
-            window.blit(img_crocodilo_TelaFinal, (1,230)) 
-            window.blit(img_canguru_TelaFinal, (650,200))
-            window.blit(img_rato_TelaFinal, (380,270))
+            window.blit(img_TeladeMorte_vidas, (0, 0))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
+
+def PlacarFinal(end,score):
+    pygame.display.set_caption(f'Pontuação final - {Nome_Jogo}')
+    while end:
+        x = 1
 
 def FaseBonus(end, all_icones):
     cesta = Cesta(img_cesta)
