@@ -223,11 +223,12 @@ def TelaFinal(end, tipo):
         if tipo == "raposa":
             window.fill(BLACK)
             window.blit(font_txt_game_over, (315,15))
-            window.blit(font_txt_tela_morte_raposa, (120,100))
-            window.blit(img_raposa_chorando_TelaFinal, (285,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
-            #window.blit(img_raposa_chorando_TelaFinal, (75,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
-            #window.blit(img_raposa_chorando_TelaFinal2, (570,170))    # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
-        
+            window.blit(font_txt_tela_morte_raposa, (100,100))
+            window.blit(img_raposa_chorando_TelaFinal, (50,200))
+            window.blit(font_deseja_jogar, (480,200))
+            window.blit(font_quer_jogar, (500,280))
+            window.blit(font_nao_quer_jogar, (500,270))
+
         elif tipo == "vidas":
             window.fill(BLACK)
             window.blit(font_txt_game_over, (315,10))
