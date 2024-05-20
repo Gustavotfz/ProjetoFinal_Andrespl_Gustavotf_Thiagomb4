@@ -9,18 +9,14 @@ from Classes import *
 pygame.mixer.init()
 #==============================================================================================================
 
-def TelaInicial():
+def TelaInicial ():
     game_status = True
     pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
-    
     # ----- Inicia estruturas de dados
     tela_inicial = True
-    
-    # Tocar a música uma vez antes do loop de eventos
-    musica_tela_inicial.play(-1)
-    
     # ===== Loop principal =====
     while tela_inicial:
+        musica_tela_inicial.play(-1)
         # ----- Trata eventos
         for event in pygame.event.get():
             # ----- Verifica consequências
@@ -29,22 +25,23 @@ def TelaInicial():
                 game_status = False
                 musica_tela_inicial.stop()
                 continue
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            elif event.type == pygame.KEYDOWN:
                 tela_inicial = False
+                musica_tela_inicial.stop()
+                continue
+            else:
                 musica_tela_inicial.stop()
                 continue
 
         # ----- Gera saídas
-        window.blit(img_TelaInicial, (0, 0))
-        window.blit(txt_TelaInicial, (270, 20))
-        window.blit(txt_Pressioneqlqrbotao, (180, 120))
-        window.blit(img_raposa_TelaInicial, (150, 200))
+        window.blit(img_TelaInicial, (0,0))
+        window.blit(txt_TelaInicial, (270,20))
+        window.blit(txt_Pressioneqlqrbotao, (180,120))
+        window.blit(img_raposa_TelaInicial, (150,200))
 
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
-    
     return game_status
-
 
 #==============================================================================================================
 
@@ -59,7 +56,7 @@ def TelaPreTutorial(PreTutorial):
                 PreTutorial = False
                 Tutorial = False
                 musica_jogo.stop()
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            elif event.type == pygame.KEYDOWN:
                 PreTutorial = False
         window.fill((255, 255, 255))
         window.blit(txt_Pre_Tutorial,(0,0))
@@ -79,7 +76,7 @@ def TelaTutorial(Tutorial):
                 Tutorial = False
                 game = False
                 musica_jogo.stop()
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            elif event.type == pygame.KEYDOWN:
                 Tutorial = False
         window.fill((255, 255, 255))
         window.blit(txt_Tutorial,(0,0))
@@ -169,7 +166,7 @@ def TelaGame (game):
                                 tiro_acerta_sound.play()
                                 score = AddPontucao(icone,score)
                             else:
-                                grito_raposinha.play()
+                                # som de morte raposa
                                 pygame.time.delay(1000)
                                 TelaFinal(end,"raposa")
                                 game = False
@@ -223,12 +220,11 @@ def TelaFinal(end, tipo):
         if tipo == "raposa":
             window.fill(BLACK)
             window.blit(font_txt_game_over, (315,15))
-            window.blit(font_txt_tela_morte_raposa, (100,100))
-            window.blit(img_raposa_chorando_TelaFinal, (50,200))
-            window.blit(font_deseja_jogar, (480,200))
-            window.blit(font_quer_jogar, (500,280))
-            window.blit(font_nao_quer_jogar, (500,270))
-
+            window.blit(font_txt_tela_morte_raposa, (120,100))
+            window.blit(img_raposa_chorando_TelaFinal, (285,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+            #window.blit(img_raposa_chorando_TelaFinal, (75,200))      # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+            #window.blit(img_raposa_chorando_TelaFinal2, (570,170))    # DÚVIDA ENTRE UMA OU DUAS IMAGENS DE RAPOSAS NA TELA DE GAME OVER 2
+        
         elif tipo == "vidas":
             window.fill(BLACK)
             window.blit(font_txt_game_over, (315,10))
@@ -239,7 +235,7 @@ def TelaFinal(end, tipo):
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
-def FaseBonus(end):
+def FaseBonus(end, all_icones):
     cesta = Cesta(img_cesta)
     
 
