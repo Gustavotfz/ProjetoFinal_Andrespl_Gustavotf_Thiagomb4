@@ -113,6 +113,14 @@ img_canguru_TelaFinal = pygame.image.load("Fotos/telafinal_canguru.png")
 img_canguru_TelaFinal = pygame.transform.scale(img_canguru_TelaFinal, (450, 450))
 
 
+#Imagem da Tela de Morte por vidas
+img_TeladeMorte_vidas = pygame.image.load("Fotos/Tela_de_morte_vidas.png")
+img_TeladeMorte_vidas = pygame.transform.scale(img_TeladeMorte_vidas, (LARGURA_TELA, ALTURA_TELA))
+#Imagem da Tela de Morte por raposa
+img_TeladeMorte_raposa = pygame.image.load("Fotos/Tela_de_morte_raposa.png")
+img_TeladeMorte_raposa = pygame.transform.scale(img_TeladeMorte_raposa, (LARGURA_TELA, ALTURA_TELA))
+
+
 # Imagens Tela Final 2
 #Imagem da Raposa da Tela Final 2
 img_raposa_chorando_TelaFinal = pygame.image.load("Fotos/raposa_chorando_telafinal.png")

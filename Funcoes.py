@@ -219,18 +219,10 @@ def TelaFinal(end, tipo):
                 end = False
 
         if tipo == "raposa":
-            window.fill(BLACK)
-            window.blit(font_txt_game_over, (315,15))
-            window.blit(font_txt_tela_morte_raposa, (100,100))
-            window.blit(img_raposa_chorando_TelaFinal, (50,200))
+            window.blit(img_TeladeMorte_raposa, (0, 0))
 
         elif tipo == "vidas":
-            window.fill(BLACK)
-            window.blit(font_txt_game_over, (315,10))
-            window.blit(font_txt_tela_final_vidas, (75,95))
-            window.blit(img_crocodilo_TelaFinal, (1,230)) 
-            window.blit(img_canguru_TelaFinal, (650,200))
-            window.blit(img_rato_TelaFinal, (380,270))
+            window.blit(img_TeladeMorte_vidas, (0, 0))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
