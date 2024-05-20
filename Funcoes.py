@@ -225,9 +225,6 @@ def TelaFinal(end, tipo):
             window.blit(font_txt_game_over, (315,15))
             window.blit(font_txt_tela_morte_raposa, (100,100))
             window.blit(img_raposa_chorando_TelaFinal, (50,200))
-            window.blit(font_deseja_jogar, (480,200))
-            window.blit(font_quer_jogar, (500,280))
-            window.blit(font_nao_quer_jogar, (500,270))
 
         elif tipo == "vidas":
             window.fill(BLACK)
@@ -238,6 +235,12 @@ def TelaFinal(end, tipo):
             window.blit(img_rato_TelaFinal, (380,270))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
+
+def PlacarFinal(end,score):
+    pygame.display.set_caption(f'Pontuação final - {Nome_Jogo}')
+    while end:
+        x = 1
+
 
 def FaseBonus(end):
     cesta = Cesta(img_cesta)
