@@ -10,6 +10,7 @@ class Icones(pygame.sprite.Sprite):
 
         self.image = img
         self.mask = pygame.mask.from_surface(self.image)
+        self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
         self.rect.x = random.randint(0, LARGURA_TELA - ALTURA_LARGURA_ICONES)
         self.rect.y = ALTURA_TELA - ALTURA_LARGURA_ICONES - 1
@@ -31,23 +32,14 @@ class Icones(pygame.sprite.Sprite):
         else:
             self.rect.y += self.speedy
 
-class Cesta(pygame.sprite.Sprite):
-    def __init__(self, img):
-        # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
 
-        self.image = img
+
+class MouseSprite(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.Surface((1, 1))  # Criar uma imagem vazia de 1x1 pixel
         self.rect = self.image.get_rect()
-        self.rect.centerx = LARGURA_TELA / 2
-        self.rect.bottom = ALTURA_TELA - 10
-        self.speedx = 0
 
     def update(self):
-        # Atualização da posição da nave
-        self.rect.x += self.speedx
-
-        # Mantem dentro da tela
-        if self.rect.right > LARGURA_TELA:
-            self.rect.right = LARGURA_TELA
-        if self.rect.left < 0:
-            self.rect.left = 0
+        # Atualize a posição da sprite para a posição atual do mouse
+        self.rect.center = pygame.mouse.get_pos()

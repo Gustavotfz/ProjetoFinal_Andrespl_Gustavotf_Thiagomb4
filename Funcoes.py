@@ -156,6 +156,11 @@ def TelaGame (game):
     # Criando um grupo de icones
     all_icones = IconesSpriteGroup(5,fase)
 
+    mouse_sprite = MouseSprite()
+    mouse_group = pygame.sprite.Group()
+    mouse_group.add(mouse_sprite)
+
+
     vidas = 5
     score = 0
     while game:
@@ -169,7 +174,9 @@ def TelaGame (game):
             elif (event.type == pygame.MOUSEBUTTONDOWN):
                 if (event.button == 1):
                     for icone in all_icones:   
-                        if icone.rect.collidepoint(event.pos):
+                        #if icone.rect.collidepoint(event.pos):
+
+                        if pygame.sprite.collide_mask(icone, mouse_sprite):
                             if (icone.image in lista_icones_viloes):
                                 icone.kill()
                                 tiro_acerta_sound.play()
@@ -197,9 +204,9 @@ def TelaGame (game):
                 game = False
                 
 
-        x = DefineFase(score,fase)
-        fase = x[0]
-        transicao = x[1]
+        estado_fase = DefineFase(score,fase)
+        fase = estado_fase[0]
+        transicao = estado_fase[1]
 
         if transicao == True:
             PrimeiraTransicaoTelas()
@@ -213,11 +220,15 @@ def TelaGame (game):
             #pygame.time.delay(1000)
 
         all_icones.update()
+        mouse_group.update()
+
 
         DefineTela(fase)
 
         # Desenhando Ícones
         all_icones.draw(window)
+        mouse_group.draw(window)
+
 
         score_txt = score_font.render(f'SCORE:{score}', True, (0, 0, 0))
         window.blit(score_txt, (350, 20))
