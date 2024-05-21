@@ -178,8 +178,6 @@ def TelaGame (game):
                                 jogar_novamente = TelaPontuacao(end,score)
                                 if jogar_novamente == False:
                                     game = False
-                                    
-
 
         for icone in all_icones:
             if (icone.rect.bottom >= ALTURA_TELA):
@@ -193,7 +191,6 @@ def TelaGame (game):
             if jogar_novamente == False:
                 game = False
                 
-            
 
         fase = DefineFase(score,fase)
         if len(all_icones) == 0:
@@ -252,7 +249,7 @@ def TelaPontuacao(end,score):
                 end = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_s:
-                    return True
+                    TelaGame(True)
                 elif event.key == pygame.K_n:
                     return False
 
