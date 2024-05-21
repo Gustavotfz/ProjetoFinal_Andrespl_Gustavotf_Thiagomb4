@@ -4,6 +4,8 @@ LARGURA_TELA = (16/10)*ALTURA_TELA
 
 ALTURA_LARGURA_ICONES = ALTURA_TELA//5
 
+ALTURA_LARGURA_VIDAS = ALTURA_TELA//15
+
 pygame.init()
 # ----- Gera tela inicial
 window = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
@@ -174,6 +176,12 @@ img_jacare = pygame.transform.scale(img_jacare, (ALTURA_LARGURA_ICONES, ALTURA_L
 img_raposa = pygame.image.load("Fotos/icone_raposa.png")
 img_raposa = pygame.transform.scale(img_raposa, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
 
+
+# Outras imagens
+
+# Coração (vidas restantes)
+img_coracao= pygame.image.load("Fotos/Coração_vidas.png")
+img_coracao = pygame.transform.scale(img_coracao, (ALTURA_LARGURA_VIDAS, ALTURA_LARGURA_VIDAS))
 
 
 # -------- Gerando Janela do Jogo

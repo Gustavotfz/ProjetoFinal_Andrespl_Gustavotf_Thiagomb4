@@ -210,10 +210,30 @@ def TelaGame (game):
         all_icones.draw(window)
 
         score_txt = score_font.render(str(score), True, (255,0,0))
-        window.blit(score_txt, (10, 10))
+        window.blit(score_txt, (400, 10))
 
-        vidas_txt = vidas_font.render(str(vidas), True, (255,0,0))
-        window.blit(vidas_txt, (100, 10))
+
+        if vidas == 5:
+            window.blit(img_coracao, (15, 15))
+            window.blit(img_coracao, (50, 15))
+            window.blit(img_coracao, (85, 15))
+            window.blit(img_coracao, (120, 15))
+            window.blit(img_coracao, (155, 15))
+        elif vidas == 4:
+            window.blit(img_coracao, (15, 15))
+            window.blit(img_coracao, (50, 15))
+            window.blit(img_coracao, (85, 15))
+            window.blit(img_coracao, (120, 15))
+        elif vidas == 3:
+            window.blit(img_coracao, (15, 15))
+            window.blit(img_coracao, (50, 15))
+            window.blit(img_coracao, (85, 15))
+        elif vidas == 2:
+            window.blit(img_coracao, (15, 15))
+            window.blit(img_coracao, (50, 15))
+        elif vidas == 1:
+            window.blit(img_coracao, (15, 15))
+
 
         if game:
             pygame.display.update()  # Mostra o novo frame para o jogador
@@ -330,3 +350,26 @@ def TelaRanking (status_ranking, score):
                     window.blit(font_txt_game_over, (315,10))
                     window.blit(font_txt_game_over, (315,10))
                     """
+
+
+def coracoes(vidas):
+    if vidas == 5:
+        window.blit(img_coracao, (150, 10))
+        window.blit(img_coracao, (200, 10))
+        window.blit(img_coracao, (250, 10))
+        window.blit(img_coracao, (300, 10))
+        window.blit(img_coracao, (350, 10))
+    elif vidas == 4:
+        window.blit(img_coracao, (150, 10))
+        window.blit(img_coracao, (200, 10))
+        window.blit(img_coracao, (250, 10))
+        window.blit(img_coracao, (300, 10))
+    elif vidas == 3:
+        window.blit(img_coracao, (150, 10))
+        window.blit(img_coracao, (200, 10))
+        window.blit(img_coracao, (250, 10))
+    elif vidas == 2:
+        window.blit(img_coracao, (150, 10))
+        window.blit(img_coracao, (200, 10))
+    elif vidas == 1:
+        window.blit(img_coracao, (150, 10))
