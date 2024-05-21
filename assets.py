@@ -97,6 +97,7 @@ pygame.mixer.music.set_volume(0.4)
 
 
 # ------- Assets das Imagens
+
 # Imagens Tela Inicial
 #Imagem do Insper da Tela Inicial
 img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
@@ -107,11 +108,6 @@ img_raposa_TelaInicial = pygame.image.load("Fotos/raposa_foto_tela_inicial.png")
 img_raposa_TelaInicial = pygame.transform.scale(img_raposa_TelaInicial, (450, 450))
 
 
-# Imagens Tela Final 1
-#Imagem do crocodilo da Tela Final 1
-img_crocodilo_TelaFinal = pygame.image.load("Fotos/telafinal_crocodilo.png")
-img_crocodilo_TelaFinal = pygame.transform.scale(img_crocodilo_TelaFinal, (450, 450))
-
 # Imagens das Telas de Morte
 #Imagem da Tela de Morte por vidas
 img_TeladeMorte_vidas = pygame.image.load("Fotos/Tela_de_morte_vidas.png")
@@ -119,6 +115,10 @@ img_TeladeMorte_vidas = pygame.transform.scale(img_TeladeMorte_vidas, (LARGURA_T
 #Imagem da Tela de Morte por raposa
 img_TeladeMorte_raposa = pygame.image.load("Fotos/Tela_de_morte_raposa.png")
 img_TeladeMorte_raposa = pygame.transform.scale(img_TeladeMorte_raposa, (LARGURA_TELA, ALTURA_TELA))
+
+#Imagem Tela de Pontuação
+img_TelaPontuacao = pygame.image.load("Fotos/Tela_de_Pontuacao.png")
+img_TelaPontuacao = pygame.transform.scale(img_TelaPontuacao, (LARGURA_TELA, ALTURA_TELA))
 
 
 # Imagens Tela Bônus 

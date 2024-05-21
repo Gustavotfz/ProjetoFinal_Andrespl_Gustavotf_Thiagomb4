@@ -257,7 +257,7 @@ def TelaPontuacao(end):
                 elif event.key == pygame.K_n:
                     return False
 
-        window.blit(img_fase1, (0, 0))
+        window.blit(img_TelaPontuacao, (0, 0))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
