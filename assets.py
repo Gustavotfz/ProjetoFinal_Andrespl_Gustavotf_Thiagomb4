@@ -64,7 +64,11 @@ font_txt_tela_final_vidas = font_txt_tela_final_vidas.render("Os mascotes invadi
 
 
 # Fonte do score board
-score_font = pygame.font.SysFont(None, 60)
+score_font = ('fontes/PressStart2P.ttf')
+score_font = pygame.font.Font(score_font, 42)
+
+
+
 score_font_final = pygame.font.SysFont(None, 90)
 
 # Fonte do score board final

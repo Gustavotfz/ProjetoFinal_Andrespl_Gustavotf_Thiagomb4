@@ -209,8 +209,8 @@ def TelaGame (game):
         # Desenhando Ícones
         all_icones.draw(window)
 
-        score_txt = score_font.render(str(score), True, (255,0,0))
-        window.blit(score_txt, (400, 10))
+        score_txt = score_font.render(f'SCORE:{score}', True, (255, 0, 0))
+        window.blit(score_txt, (355, 20))
         
         Coracoes(vidas)
 
@@ -258,7 +258,7 @@ def TelaPontuacao(end,score):
 
         window.blit(img_TelaPontuacao, (0, 0))
 
-        pontos = final_score_font.render(f'{score}', True, (255, 165, 0))
+        pontos = final_score_font.render(str(score), True, (255, 165, 0))
         window.blit(pontos, (600, 55))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
