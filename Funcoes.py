@@ -202,7 +202,9 @@ def TelaGame (game):
         transicao = x[1]
 
         if transicao == True:
+            PrimeiraTransicaoTelas()
             score = FaseBonus(score)
+            SegundaTransicaoTelas()
 
         if len(all_icones) == 0:
             pygame.display.update()
@@ -275,7 +277,7 @@ def TelaPontuacao(end,score):
 
 
 def FaseBonus(score):
-    score = 0
+
     pygame.display.set_caption(f'Fase Bônus - {Nome_Jogo}')
 
     player_x = LARGURA_TELA // 2
@@ -291,7 +293,7 @@ def FaseBonus(score):
     running = True
 
     while running:
-        clock.tick(FPS/1.5)
+        clock.tick(FPS/1.3)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -315,7 +317,7 @@ def FaseBonus(score):
             raposa[1] += falling_speed
             # Verifica colisão com o jogador
             if player_x < raposa[0] < player_x + 50 and player_y < raposa[1] < player_y + 50:
-                score += 30
+                score += 2
                 raposas.remove(raposa)
             # Remove objetos que saem da tela
             elif raposa[1] > ALTURA_TELA:
@@ -392,3 +394,45 @@ def Coracoes(vidas):
         window.blit(img_coracao, (50, 15))
     elif vidas == 1:
         window.blit(img_coracao, (15, 15))
+
+def PrimeiraTransicaoTelas():
+    pygame.display.set_caption(f'Transição - {Nome_Jogo}')
+
+    transition_duration = 3000
+    
+    pygame.time.set_timer(pygame.USEREVENT, transition_duration)
+
+    transitioning = True
+
+    while transitioning:
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                transitioning = False
+            elif event.type == pygame.USEREVENT:
+                transitioning = False      
+        
+        window.blit(img_transicao_indo, (0, 0))
+
+        pygame.display.update()  # Mostra o novo frame para o jogador
+
+def SegundaTransicaoTelas():
+    pygame.display.set_caption(f'Transição - {Nome_Jogo}')
+
+    transition_duration = 3000
+    
+    pygame.time.set_timer(pygame.USEREVENT, transition_duration)
+
+    transitioning = True
+
+    while transitioning:
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                transitioning = False
+            elif event.type == pygame.USEREVENT:
+                transitioning = False      
+        
+        window.blit(img_transicao_saindo, (0, 0))
+
+        pygame.display.update()  # Mostra o novo frame para o jogador

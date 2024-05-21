@@ -188,8 +188,17 @@ img_raposa = pygame.image.load("Fotos/icone_raposa.png")
 img_raposa = pygame.transform.scale(img_raposa, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES))
 
 
-# Outras imagens
+# Imagens de transição de fases (indo e saindo da fase bônus)
+# Imagem indo para a fase bônus
+img_transicao_indo = pygame.image.load("Fotos/fundo_transicao_indo.png")
+img_transicao_indo = pygame.transform.scale(img_transicao_indo, (LARGURA_TELA, ALTURA_TELA))
 
+# Imagem saindo para a fase bônus
+img_transicao_saindo = pygame.image.load("Fotos/fundo_transicao_saindo.png")
+img_transicao_saindo = pygame.transform.scale(img_transicao_saindo, (LARGURA_TELA, ALTURA_TELA))
+
+
+# Outras imagens
 # Coração (vidas restantes)
 img_coracao= pygame.image.load("Fotos/Coração_vidas.png")
 img_coracao = pygame.transform.scale(img_coracao, (ALTURA_LARGURA_VIDAS, ALTURA_LARGURA_VIDAS))
