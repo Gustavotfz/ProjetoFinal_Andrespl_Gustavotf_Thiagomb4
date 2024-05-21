@@ -7,5 +7,6 @@ Tutorial = TelaInicial()
 game = TelaTutorial(Tutorial)
 end = TelaGame(game)
 
+
 # ===== Finalização =====
 pygame.quit()  # Função do PyGame que finaliza os recursos utilizados

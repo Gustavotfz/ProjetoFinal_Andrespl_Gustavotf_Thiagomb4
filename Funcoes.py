@@ -135,13 +135,18 @@ def DefineTela (fase):
 #==============================================================================================================
   
 def DefineFase (score,fase):
+    transicao = False
     if score >= 100 and fase == 1:
+        transicao = True
         fase = 2
-    elif score >= 250 and fase == 2:
+    elif score >= 450 and fase == 2:
+        transicao = True
         fase = 3
-    elif score >= 400 and fase == 3:
+    elif score >= 750 and fase == 3:
+        transicao = True
         fase = 4
-    return fase   
+    fase_transicao = [fase,transicao]
+    return fase_transicao
 
 #==============================================================================================================
 
@@ -192,7 +197,13 @@ def TelaGame (game):
                 game = False
                 
 
-        fase = DefineFase(score,fase)
+        x = DefineFase(score,fase)
+        fase = x[0]
+        transicao = x[1]
+
+        if transicao == True:
+            score = FaseBonus(score)
+
         if len(all_icones) == 0:
             pygame.display.update()
             all_icones = IconesSpriteGroup(5,fase)
@@ -260,41 +271,72 @@ def TelaPontuacao(end,score):
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
+#===============================================================================================
 
-def FaseBonus(end, all_icones):
-    cesta = Cesta(img_cesta)
 
-    while end:
-        # ----- Trata eventos
+def FaseBonus(score):
+    score = 0
+    pygame.display.set_caption(f'Fase Bônus - {Nome_Jogo}')
+
+    player_x = LARGURA_TELA // 2
+    player_y = ALTURA_TELA - 100
+    player_speed = 10
+
+    raposas = []
+    falling_speed = 5
+
+    game_duration = 20000
+    pygame.time.set_timer(pygame.USEREVENT, game_duration)
+
+    running = True
+
+    while running:
+        clock.tick(FPS/1.5)
+
         for event in pygame.event.get():
-        # ----- Verifica consequências
             if event.type == pygame.QUIT:
-                end = False
+                running = False
+            elif event.type == pygame.USEREVENT:
+                running = False
 
-            if event.type == pygame.KEYDOWN:
-            # Dependendo da tecla, altera a velocidade.
-                if event.key == pygame.K_LEFT:
-                    cesta.speedx -= 8
-                if event.key == pygame.K_RIGHT:
-                    cesta.speedx += 8
-            # Verifica se soltou alguma tecla.
-            if event.type == pygame.KEYUP:
-                # Dependendo da tecla, altera a velocidade.
-                if event.key == pygame.K_LEFT:
-                    cesta.speedx += 8
-                if event.key == pygame.K_RIGHT:
-                    cesta.speedx -= 8
-        cesta.update()
+        # Movimentação do jogador
+        tecla = pygame.key.get_pressed()
+        if tecla[pygame.K_LEFT] and player_x > 0:
+            player_x -= player_speed
+        if tecla[pygame.K_RIGHT] and player_x < LARGURA_TELA - 50:
+            player_x += player_speed
 
-        for icone in all_icones:
-            hits = pygame.sprite.spritecollide(cesta, all_icones, True)
-            if len(hits) > 0:
-                icone.kill()
-                points = 30
-                score = AddPontucao(points,score)
+        # Adiciona novos objetos que caem
+        if random.randint(1, 20) == 1:
+            raposas.append([random.randint(0, LARGURA_TELA - 50), 0])
+
+        # Atualiza a posição dos objetos que caem
+        for raposa in raposas:
+            raposa[1] += falling_speed
+            # Verifica colisão com o jogador
+            if player_x < raposa[0] < player_x + 50 and player_y < raposa[1] < player_y + 50:
+                score += 30
+                raposas.remove(raposa)
+            # Remove objetos que saem da tela
+            elif raposa[1] > ALTURA_TELA:
+                raposas.remove(raposa)
+
+        # Desenha na tela
+        window.blit(img_fundo_fase_bonus, (0,0))
+        window.blit(img_cesta, (player_x, player_y))
+        for obj in raposas:
+            window.blit(img_raposa_fase_bonus, obj)
+
+        score_txt = score_font.render(f'SCORE:{score}', True, (0, 0, 0))
+        window.blit(score_txt, (350, 20))
+
+        pygame.display.update()
+    
+    return score
 
 
-        pygame.display.update()  # Mostra o novo frame para o jogador
+#=============================================================================
+
 
 def AlteraNome (nome_ranking, letra):
     nome_ranking += letra

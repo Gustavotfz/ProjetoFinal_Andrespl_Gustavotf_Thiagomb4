@@ -138,7 +138,11 @@ img_Tutorial = pygame.transform.scale(img_Tutorial, (LARGURA_TELA, ALTURA_TELA))
 # Imagens Tela Bônus 
 #Imagem da cesta
 img_cesta = pygame.image.load("Fotos/cesta_fasebonus.png")
-img_cesta = pygame.transform.scale(img_cesta, (ALTURA_LARGURA_ICONES+20, ALTURA_LARGURA_ICONES+20))
+img_cesta = pygame.transform.scale(img_cesta, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES/2))
+
+#Imagem icone raposa para a Tela bonus
+img_raposa_fase_bonus = pygame.image.load("Fotos/icone_raposa.png")
+img_raposa_fase_bonus = pygame.transform.scale(img_raposa_fase_bonus, (ALTURA_LARGURA_ICONES/2, ALTURA_LARGURA_ICONES/2))
 
 
 # Imagens de fundo fases do jogo
@@ -157,6 +161,9 @@ img_fase3 = pygame.transform.scale(img_fase3, (LARGURA_TELA, ALTURA_TELA))
 #Imagem do Terraço do P2 da Quarta/Última Fase do Jogo
 img_fase4 = pygame.image.load("Fotos/fundo_nivel4.jpg")
 img_fase4 = pygame.transform.scale(img_fase4, (LARGURA_TELA, ALTURA_TELA))
+
+img_fundo_fase_bonus = pygame.image.load("Fotos/fundo_tela_bonus.jpg")
+img_fundo_fase_bonus = pygame.transform.scale(img_fundo_fase_bonus, (LARGURA_TELA, ALTURA_TELA))
 
 
 # Ícones do jogo
