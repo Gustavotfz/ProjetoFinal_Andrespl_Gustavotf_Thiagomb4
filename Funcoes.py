@@ -10,14 +10,18 @@ from Classes import *
 pygame.mixer.init()
 #==============================================================================================================
 
-def TelaInicial ():
+def TelaInicial():
     game_status = True
     pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
+    
     # ----- Inicia estruturas de dados
     tela_inicial = True
+    
+    # Tocar a música uma vez antes do loop de eventos
+    musica_tela_inicial.play(-1)
+    
     # ===== Loop principal =====
     while tela_inicial:
-        musica_tela_inicial.play(-1)
         # ----- Trata eventos
         for event in pygame.event.get():
             # ----- Verifica consequências
@@ -26,23 +30,22 @@ def TelaInicial ():
                 game_status = False
                 musica_tela_inicial.stop()
                 continue
-            elif event.type == pygame.KEYDOWN:
+            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 tela_inicial = False
-                musica_tela_inicial.stop()
-                continue
-            else:
                 musica_tela_inicial.stop()
                 continue
 
         # ----- Gera saídas
-        window.blit(img_TelaInicial, (0,0))
-        window.blit(txt_TelaInicial, (270,20))
-        window.blit(txt_Pressioneqlqrbotao, (180,120))
-        window.blit(img_raposa_TelaInicial, (150,200))
+        window.blit(img_TelaInicial, (0, 0))
+        window.blit(txt_TelaInicial, (270, 20))
+        window.blit(txt_Pressioneqlqrbotao, (180, 120))
+        window.blit(img_raposa_TelaInicial, (150, 200))
 
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
+    
     return game_status
+
 
 #==============================================================================================================
 
@@ -57,7 +60,7 @@ def TelaPreTutorial(PreTutorial):
                 PreTutorial = False
                 Tutorial = False
                 musica_jogo.stop()
-            elif event.type == pygame.KEYDOWN:
+            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 PreTutorial = False
         window.fill((255, 255, 255))
         window.blit(txt_Pre_Tutorial,(0,0))
@@ -78,7 +81,7 @@ def TelaTutorial(Tutorial):
                 game = False
                 musica_jogo.stop()
                 
-            elif event.type == pygame.KEYDOWN:
+            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 Tutorial = False
         window.fill((255, 255, 255))
         window.blit(txt_Tutorial,(0,0))
