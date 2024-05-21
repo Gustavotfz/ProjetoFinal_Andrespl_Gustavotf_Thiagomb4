@@ -63,7 +63,7 @@ def TelaPreTutorial(PreTutorial):
             elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 PreTutorial = False
         window.fill((255, 255, 255))
-        window.blit(txt_Pre_Tutorial,(0,0))
+        window.blit(txt_Pre_Tutorial,(150,250))
         pygame.display.update()  # Mostra o novo frame para o jogador
     return Tutorial
 
@@ -172,6 +172,7 @@ def TelaGame (game):
                                 score = AddPontucao(icone,score)
                             else:
                                 # som de morte raposa
+                                grito_raposinha.play()
                                 pygame.time.delay(1000)
                                 TelaFinal(end,"raposa")
                                     
