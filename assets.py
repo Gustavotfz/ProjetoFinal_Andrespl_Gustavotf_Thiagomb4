@@ -14,18 +14,23 @@ pygame.mixer.init()
 #Título da Tela Inicial
 font_txt_TelaInicial = pygame.font.SysFont("cambria", 66, True)
 txt_TelaInicial = font_txt_TelaInicial.render("INSPER INVASION", True, (255,0,0))
+
 #Mensagem de "Pressione qualquer botão" da Tela Inicial
 font_txt_Pressioneqlqrbotao = pygame.font.SysFont(None,46)
 txt_Pressioneqlqrbotao = font_txt_Pressioneqlqrbotao.render("Pressione qualquer botão para iniciar o jogo!", True, (0,0,0))
+
 #Título da Página de Tutorial
 font_txt_Tutorial = pygame.font.SysFont("cambria", 56, True)
 txt_Tutorial = font_txt_Tutorial.render("Clique para pular o Tutorial", True, (255,0,0))
+
 #Título da Página de Pré-Tutorial
 font_txt_Pre_Tutorial = pygame.font.SysFont("cambria", 56, True)
 txt_Pre_Tutorial = font_txt_Pre_Tutorial.render("Clique para Iniciar o Tutorial", True, (255,0,0))
+
 #Título da Página do Jogo
 font_txt_Jogo = pygame.font.SysFont("cambria", 56, True)
 txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
+
 #Título da Página de Derrota
 font_txt_Final = pygame.font.SysFont("cambria", 56, True)
 txt_Final = font_txt_Final.render("Jogo", True, (255,0,0))
@@ -34,6 +39,7 @@ txt_Final = font_txt_Final.render("Jogo", True, (255,0,0))
 #Título da Tela Final (matou a raposa)
 font_txt_tela_morte_raposa = pygame.font.SysFont("cambria", 66, True)
 font_txt_tela_morte_raposa = font_txt_tela_morte_raposa.render("Você matou a raposa bebê!", True, (255,250,205))
+
 # Escrito de deseja jogar de novo
 font_deseja_jogar = pygame.font.SysFont("cambria", 45, True)
 font_deseja_jogar = font_deseja_jogar.render("Deseja jogar de novo?", True, (255,250,205))

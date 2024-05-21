@@ -59,7 +59,7 @@ def TelaPreTutorial(PreTutorial):
             if event.type == pygame.QUIT:
                 PreTutorial = False
                 Tutorial = False
-                musica_jogo.stop()
+                ####musica_jogo.stop()###
             elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 PreTutorial = False
         window.fill((255, 255, 255))
