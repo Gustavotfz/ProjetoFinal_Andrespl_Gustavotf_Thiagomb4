@@ -65,6 +65,9 @@ font_txt_tela_final_vidas = font_txt_tela_final_vidas.render("Os mascotes invadi
 score_font = pygame.font.SysFont(None, 60)
 score_font_final = pygame.font.SysFont(None, 90)
 
+# Fonte do score board final
+final_score_font = pygame.font.SysFont('cambria', 60)
+
 # Fonte das vidas
 vidas_font = pygame.font.SysFont(None, 60)
 

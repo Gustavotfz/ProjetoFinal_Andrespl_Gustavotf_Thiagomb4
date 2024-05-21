@@ -176,7 +176,7 @@ def TelaGame (game):
                                 pygame.time.delay(1000)
                                 TelaMorte(end,"raposa")
                                     
-                                jogar_novamente = TelaPontuacao(end)
+                                jogar_novamente = TelaPontuacao(end,score)
                                 if jogar_novamente == False:
                                     game = False
                                     
@@ -190,7 +190,7 @@ def TelaGame (game):
         
         if vidas == 0:
             TelaMorte(end,"vidas")
-            jogar_novamente = TelaPontuacao(end) 
+            jogar_novamente = TelaPontuacao(end,score) 
             if jogar_novamente == False:
                 game = False
                 
@@ -242,7 +242,7 @@ def TelaMorte(end, tipo):
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
-def TelaPontuacao(end):
+def TelaPontuacao(end,score):
     pygame.display.set_caption(f'Pontuação final - {Nome_Jogo}')
     
     while end:
@@ -258,6 +258,9 @@ def TelaPontuacao(end):
                     return False
 
         window.blit(img_TelaPontuacao, (0, 0))
+
+        pontos = final_score_font.render(f'{score}', True, (255, 165, 0))
+        window.blit(pontos, (600, 55))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
