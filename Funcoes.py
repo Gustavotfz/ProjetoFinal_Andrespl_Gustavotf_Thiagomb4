@@ -209,8 +209,8 @@ def TelaGame (game):
         # Desenhando Ícones
         all_icones.draw(window)
 
-        score_txt = score_font.render(f'SCORE:{score}', True, (255, 0, 0))
-        window.blit(score_txt, (355, 20))
+        score_txt = score_font.render(f'SCORE:{score}', True, (0, 0, 0))
+        window.blit(score_txt, (350, 20))
         
         Coracoes(vidas)
 
