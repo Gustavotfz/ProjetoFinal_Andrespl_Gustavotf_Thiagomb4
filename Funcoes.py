@@ -83,8 +83,7 @@ def TelaTutorial(Tutorial):
                 
             elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 Tutorial = False
-        window.fill((255, 255, 255))
-        window.blit(txt_Tutorial,(0,0))
+        window.blit(img_Tutorial,(0,0))
         pygame.display.update()  # Mostra o novo frame para o jogador
     return game
 

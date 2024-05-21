@@ -2,8 +2,8 @@ import pygame
 from Funcoes import *
 
 # ----- Roda as Funções dos Diferentes Momentos de Jogo
-PreTutorial = TelaInicial()
-Tutorial = TelaPreTutorial(PreTutorial)
+
+Tutorial = TelaInicial()
 game = TelaTutorial(Tutorial)
 end = TelaGame(game)
 

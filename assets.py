@@ -124,6 +124,11 @@ img_TelaPontuacao = pygame.image.load("Fotos/Tela_de_Pontuacao.png")
 img_TelaPontuacao = pygame.transform.scale(img_TelaPontuacao, (LARGURA_TELA, ALTURA_TELA))
 
 
+# Imagem da Tela de Tutorial
+img_Tutorial = pygame.image.load("Fotos/Tela_Tutorial.png")
+img_Tutorial = pygame.transform.scale(img_Tutorial, (LARGURA_TELA, ALTURA_TELA))
+
+
 # Imagens Tela Bônus 
 #Imagem da cesta
 img_cesta = pygame.image.load("Fotos/cesta_fasebonus.png")
