@@ -70,7 +70,7 @@ img_Tutorial = pygame.transform.scale(img_Tutorial, (LARGURA_TELA, ALTURA_TELA))
 # Imagens Tela Bônus 
 #Imagem da cesta
 img_cesta = pygame.image.load("Fotos/cesta_fasebonus.png")
-img_cesta = pygame.transform.scale(img_cesta, (ALTURA_LARGURA_ICONES, ALTURA_LARGURA_ICONES/2))
+img_cesta = pygame.transform.scale(img_cesta, (ALTURA_LARGURA_ICONES/1.5, ALTURA_LARGURA_ICONES/3))
 
 #Imagem icone raposa para a Tela bonus
 img_raposa_fase_bonus = pygame.image.load("Fotos/icone_raposa.png")

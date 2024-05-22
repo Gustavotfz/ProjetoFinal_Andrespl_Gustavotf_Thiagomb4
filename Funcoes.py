@@ -118,13 +118,13 @@ def DefineTela (fase):
   
 def DefineFase (score,fase):
     transicao = False
-    if score >= 100 and fase == 1:
+    if score >= 10 and fase == 1:
         transicao = True
         fase = 2
     elif score >= 450 and fase == 2:
         transicao = True
         fase = 3
-    elif score >= 750 and fase == 3:
+    elif score >= 800 and fase == 3:
         transicao = True
         fase = 4
     fase_transicao = [fase,transicao]
