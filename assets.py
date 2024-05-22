@@ -13,15 +13,6 @@ pygame.mixer.init()
 
 # ------- Assets dos Textos
 
-#Título da Tela Inicial
-font_txt_TelaInicial = pygame.font.SysFont("cambria", 66, True)
-txt_TelaInicial = font_txt_TelaInicial.render("INSPER INVASION", True, (255,0,0))
-
-#Mensagem de "Pressione qualquer botão" da Tela Inicial
-font_txt_Pressioneqlqrbotao = pygame.font.SysFont(None,46)
-txt_Pressioneqlqrbotao = font_txt_Pressioneqlqrbotao.render("Pressione qualquer botão para iniciar o jogo!", True, (0,0,0))
-
-
 # Fonte do score board
 score_font = ('fontes/PressStart2P.ttf')
 score_font = pygame.font.Font(score_font, 42)
@@ -48,7 +39,7 @@ pygame.mixer.music.set_volume(0.4)
 # ------- Assets das Imagens
 # Imagens Tela Inicial
 #Imagem do Insper da Tela Inicial
-img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
+img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.png")
 img_TelaInicial = pygame.transform.scale(img_TelaInicial, (LARGURA_TELA, ALTURA_TELA))
 
 #Imagem da Raposa da Tela Inicial

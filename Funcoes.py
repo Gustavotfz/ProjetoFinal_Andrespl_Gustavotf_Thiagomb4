@@ -40,8 +40,6 @@ def TelaInicial():
 
         # ----- Gera saídas
         window.blit(img_TelaInicial, (0, 0))
-        window.blit(txt_TelaInicial, (270, 20))
-        window.blit(txt_Pressioneqlqrbotao, (180, 120))
         window.blit(img_raposa_TelaInicial, (150, 200))
 
         # ----- Atualiza estado do jogo
@@ -239,7 +237,7 @@ def TelaMorte(end, tipo,score):
 
         elif tipo == "vidas":
             window.blit(img_TeladeMorte_vidas, (0, 0))
-            window.blit(pontos, (355, 420))
+            window.blit(pontos, (350, 420))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
