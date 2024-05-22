@@ -245,7 +245,7 @@ def TelaMorte(end, tipo,score):
 #===============================================================================================
 
 
-def FaseBonus(score):
+def FaseBonusxxx(score):
 
     pygame.display.set_caption(f'Fase Bônus - {Nome_Jogo}')
 
@@ -291,6 +291,68 @@ def FaseBonus(score):
             # Remove objetos que saem da tela
             elif raposa[1] > ALTURA_TELA:
                 raposas.remove(raposa)
+
+        # Desenha na tela
+        window.blit(img_fundo_fase_bonus, (0,0))
+        window.blit(img_cesta, (player_x, player_y))
+        for obj in raposas:
+            window.blit(img_raposa_fase_bonus, obj)
+
+        score_txt = score_font.render(f'SCORE:{score}', True, (0, 0, 0))
+        window.blit(score_txt, (350, 20))
+
+        pygame.display.update()
+    
+    return score
+
+#=============================================================
+
+player_mask = pygame.mask.from_surface(img_cesta)
+raposa_mask = pygame.mask.from_surface(img_raposa_fase_bonus)
+
+def FaseBonus(score):
+
+    pygame.display.set_caption(f'Fase Bônus - {Nome_Jogo}')
+
+    player_x = LARGURA_TELA // 2
+    player_y = ALTURA_TELA - 100
+    player_speed = 10
+
+    raposas = []
+    falling_speed = 5
+
+    game_duration = 20000
+    pygame.time.set_timer(pygame.USEREVENT, game_duration)
+
+    running = True
+
+    while running:
+        clock.tick(FPS/1.4)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.USEREVENT:
+                running = False
+
+        # Movimentação do jogador
+        tecla = pygame.key.get_pressed()
+        if tecla[pygame.K_LEFT] and player_x > 0:
+            player_x -= player_speed
+        if tecla[pygame.K_RIGHT] and player_x < LARGURA_TELA - 50:
+            player_x += player_speed
+
+        # Adiciona novos objetos que caem
+        if random.randint(1, 20) == 1:
+            raposas.append([random.randint(0, LARGURA_TELA - 50), 0])
+
+        # Atualiza a posição dos objetos que caem
+        for raposa in raposas:
+            raposa[1] += falling_speed
+            if player_mask.overlap(raposa_mask, (player_x - raposa[0], player_y - raposa[1])):
+                score += 2
+                raposas.remove(raposa)
+
 
         # Desenha na tela
         window.blit(img_fundo_fase_bonus, (0,0))
