@@ -26,6 +26,9 @@ txt_Pressioneqlqrbotao = font_txt_Pressioneqlqrbotao.render("Pressione qualquer 
 score_font = ('fontes/PressStart2P.ttf')
 score_font = pygame.font.Font(score_font, 42)
 
+# Fonte do scorw board final
+final_score_font = pygame.font.SysFont("cambria", 50, True)
+
 
 # ------- Assets das Músicas de Fundo
 #Música da Tela Inicial - Back in Black

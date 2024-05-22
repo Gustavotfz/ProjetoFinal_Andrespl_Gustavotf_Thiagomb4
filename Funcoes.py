@@ -118,7 +118,7 @@ def DefineTela (fase):
   
 def DefineFase (score,fase):
     transicao = False
-    if score >= 10 and fase == 1:
+    if score >= 100 and fase == 1:
         transicao = True
         fase = 2
     elif score >= 450 and fase == 2:
@@ -167,7 +167,7 @@ def TelaGame (game):
                                 # som de morte raposa
                                 grito_raposinha.play()
                                 pygame.time.delay(1000)
-                                TelaMorte(end,"raposa")
+                                TelaMorte(end,"raposa",score)
                                 game = False
 
         for icone in all_icones:
@@ -177,7 +177,7 @@ def TelaGame (game):
                 icone.kill()
         
         if vidas == 0:
-            TelaMorte(end,"vidas")
+            TelaMorte(end,"vidas",score)
             game = False
                 
 
@@ -220,7 +220,7 @@ def TelaGame (game):
 
 #==============================================================================================================
 
-def TelaMorte(end, tipo):
+def TelaMorte(end, tipo,score):
     pygame.display.set_caption(f'Fim de Jogo - {Nome_Jogo}')
     while end:
         # ----- Trata eventos
@@ -231,11 +231,15 @@ def TelaMorte(end, tipo):
             elif event.type == pygame.KEYDOWN:
                 end = False
 
+        pontos = final_score_font.render(f'FINAL SCORE: {score}', True, (255, 165, 0))
+
         if tipo == "raposa":
             window.blit(img_TeladeMorte_raposa, (0, 0))
+            window.blit(pontos, (550, 400))
 
         elif tipo == "vidas":
             window.blit(img_TeladeMorte_vidas, (0, 0))
+            window.blit(pontos, (355, 420))
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
