@@ -8,10 +8,14 @@ from Classes import *
 
 # tiro_acerta_sound.stop
 pygame.mixer.init()
+
+
 #==============================================================================================================
 
 def TelaInicial():
-    game_status = True
+
+    estado = True
+
     pygame.display.set_caption(f'Tela Inicial - {Nome_Jogo}')
     
     # ----- Inicia estruturas de dados
@@ -19,7 +23,7 @@ def TelaInicial():
     
     # Tocar a música uma vez antes do loop de eventos
     musica_tela_inicial.play(-1)
-    
+
     # ===== Loop principal =====
     while tela_inicial:
         # ----- Trata eventos
@@ -27,7 +31,6 @@ def TelaInicial():
             # ----- Verifica consequências
             if event.type == pygame.QUIT:
                 tela_inicial = False
-                game_status = False
                 musica_tela_inicial.stop()
                 continue
             elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
@@ -43,8 +46,9 @@ def TelaInicial():
 
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
-    
-    return game_status
+
+    return estado
+
 
 
 #==============================================================================================================
@@ -70,7 +74,7 @@ def TelaPreTutorial(PreTutorial):
 #==============================================================================================================
 
 def TelaTutorial(Tutorial):
-    game = Tutorial
+    estado = Tutorial
     pygame.display.set_caption(f'Tutorial - {Nome_Jogo}')
     while Tutorial:
         # ----- Trata eventos
@@ -78,14 +82,13 @@ def TelaTutorial(Tutorial):
         # ----- Verifica consequências
             if event.type == pygame.QUIT:
                 Tutorial = False
-                game = False
                 musica_jogo.stop()
                 
             elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 Tutorial = False
         window.blit(img_Tutorial,(0,0))
         pygame.display.update()  # Mostra o novo frame para o jogador
-    return game
+    return estado
 
 #==============================================================================================================
 
@@ -186,10 +189,7 @@ def TelaGame (game):
                                 grito_raposinha.play()
                                 pygame.time.delay(1000)
                                 TelaMorte(end,"raposa")
-                                    
-                                jogar_novamente = TelaPontuacao(end,score)
-                                if jogar_novamente == False:
-                                    game = False
+                                game = False
 
         for icone in all_icones:
             if (icone.rect.bottom >= ALTURA_TELA):
@@ -199,9 +199,7 @@ def TelaGame (game):
         
         if vidas == 0:
             TelaMorte(end,"vidas")
-            jogar_novamente = TelaPontuacao(end,score) 
-            if jogar_novamente == False:
-                game = False
+            game = False
                 
 
         estado_fase = DefineFase(score,fase)
