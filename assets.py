@@ -21,92 +21,28 @@ txt_TelaInicial = font_txt_TelaInicial.render("INSPER INVASION", True, (255,0,0)
 font_txt_Pressioneqlqrbotao = pygame.font.SysFont(None,46)
 txt_Pressioneqlqrbotao = font_txt_Pressioneqlqrbotao.render("Pressione qualquer botão para iniciar o jogo!", True, (0,0,0))
 
-#Título da Página de Tutorial
-font_txt_Tutorial = pygame.font.SysFont("cambria", 56, True)
-txt_Tutorial = font_txt_Tutorial.render("Clique para pular o Tutorial", True, (255,0,0))
-
-#Título da Página de Pré-Tutorial
-font_txt_Pre_Tutorial = pygame.font.SysFont("cambria", 56, True)
-txt_Pre_Tutorial = font_txt_Pre_Tutorial.render("Clique para Iniciar o Tutorial", True, (255,0,0))
-
-#Título da Página do Jogo
-font_txt_Jogo = pygame.font.SysFont("cambria", 56, True)
-txt_Jogo = font_txt_Jogo.render("Jogo", True, (255,0,0))
-
-#Título da Página de Derrota
-font_txt_Final = pygame.font.SysFont("cambria", 56, True)
-txt_Final = font_txt_Final.render("Jogo", True, (255,0,0))
-
-# Textos das Telas Finais
-#Título da Tela Final (matou a raposa)
-font_txt_tela_morte_raposa = pygame.font.SysFont("cambria", 66, True)
-font_txt_tela_morte_raposa = font_txt_tela_morte_raposa.render("Você matou a raposa bebê!", True, (255,250,205))
-
-# Escrito de deseja jogar de novo
-font_deseja_jogar = pygame.font.SysFont("cambria", 45, True)
-font_deseja_jogar = font_deseja_jogar.render("Deseja jogar de novo?", True, (255,250,205))
-
-font_quer_jogar = pygame.font.SysFont("cambria", 40, True)
-font_quer_jogar = font_quer_jogar.render("Sim, pressione S", True, (255,250,205))
-
-font_nao_quer_jogar = pygame.font.SysFont("cambria", 40, True)
-font_nao_quer_jogar = font_nao_quer_jogar.render("Não, pressione N", True, (255,250,205))
-
-#RANKING
-font_txt_ranking = pygame.font.SysFont("cambria", 76, True)
-
-#GAME OVER
-font_txt_game_over = pygame.font.SysFont("cambria", 76, True)
-font_txt_game_over = font_txt_game_over.render("GAME OVER", True, (255,0,0))
-#Título da Tela Final (perdeu as vidas)
-font_txt_tela_final_vidas = pygame.font.SysFont("cambria", 56, True)
-font_txt_tela_final_vidas = font_txt_tela_final_vidas.render("Os mascotes invadiram a faculdade!", True, (255,250,205))
-
 
 # Fonte do score board
 score_font = ('fontes/PressStart2P.ttf')
 score_font = pygame.font.Font(score_font, 42)
 
 
-
-score_font_final = pygame.font.SysFont(None, 90)
-
-# Fonte do score board final
-final_score_font = pygame.font.SysFont('cambria', 60)
-
-# Fonte das vidas
-vidas_font = pygame.font.SysFont(None, 60)
-
-
-# ------- Assets dos Sons do Jogo
-# som do tiro quando acerta
-#tiro_acerta_sound = pygame.mixer.init('Áudios/Pistola22cal.mp3')
-# som do tiro quando erra
-#tiro_erra_sound = pygame.mixer.init('Áudios/cartoon_tiro.mp3')
-#pygame.mixer.music.set_volume(0.4)
-
-
-
 # ------- Assets das Músicas de Fundo
 #Música da Tela Inicial - Back in Black
 musica_tela_inicial = pygame.mixer.Sound('audios/ACDC - Back In Black (Official Music Video).mp3')
-#Música do Jogo - Missão Impossível
-musica_jogo = pygame.mixer.Sound("audios/Missao_Impossivel.mp3")
+
+##Música do Jogo - Missão Impossível
+#musica_jogo = pygame.mixer.Sound("audios/Missao_Impossivel.mp3")
 
 
 # ------- Assets Sons do Jogo
 # som do tiro quando acerta
 tiro_acerta_sound = pygame.mixer.Sound('audios/tiro.wav')
 grito_raposinha = pygame.mixer.Sound('audios/grito_classico.wav')
-# som do tiro quando erra
-# tiro_erra_sound = pygame.mixer.Sound('audios/cartoon_tiro.mp3')
 pygame.mixer.music.set_volume(0.4)
-# foi??
-
 
 
 # ------- Assets das Imagens
-
 # Imagens Tela Inicial
 #Imagem do Insper da Tela Inicial
 img_TelaInicial = pygame.image.load("Fotos/Foto_TelaInicial.jpg")
@@ -124,10 +60,6 @@ img_TeladeMorte_vidas = pygame.transform.scale(img_TeladeMorte_vidas, (LARGURA_T
 #Imagem da Tela de Morte por raposa
 img_TeladeMorte_raposa = pygame.image.load("Fotos/Tela_de_morte_raposa.png")
 img_TeladeMorte_raposa = pygame.transform.scale(img_TeladeMorte_raposa, (LARGURA_TELA, ALTURA_TELA))
-
-#Imagem Tela de Pontuação
-img_TelaPontuacao = pygame.image.load("Fotos/Tela_de_Pontuacao.png")
-img_TelaPontuacao = pygame.transform.scale(img_TelaPontuacao, (LARGURA_TELA, ALTURA_TELA))
 
 
 # Imagem da Tela de Tutorial

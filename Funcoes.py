@@ -50,28 +50,8 @@ def TelaInicial():
     return estado
 
 
-
 #==============================================================================================================
 
-def TelaPreTutorial(PreTutorial):
-    Tutorial = PreTutorial
-    pygame.display.set_caption(f'Pré-Tutorial - {Nome_Jogo}')
-    while PreTutorial:
-        # ----- Trata eventos
-        for event in pygame.event.get():
-        # ----- Verifica consequências
-            if event.type == pygame.QUIT:
-                PreTutorial = False
-                Tutorial = False
-                ####musica_jogo.stop()###
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
-                PreTutorial = False
-        window.fill((255, 255, 255))
-        window.blit(txt_Pre_Tutorial,(150,250))
-        pygame.display.update()  # Mostra o novo frame para o jogador
-    return Tutorial
-
-#==============================================================================================================
 
 def TelaTutorial(Tutorial):
     estado = Tutorial
@@ -82,7 +62,6 @@ def TelaTutorial(Tutorial):
         # ----- Verifica consequências
             if event.type == pygame.QUIT:
                 Tutorial = False
-                musica_jogo.stop()
                 
             elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 Tutorial = False
@@ -260,27 +239,6 @@ def TelaMorte(end, tipo):
 
         pygame.display.update()  # Mostra o novo frame para o jogador
 
-def TelaPontuacao(end,score):
-    pygame.display.set_caption(f'Pontuação final - {Nome_Jogo}')
-    
-    while end:
-        # ----- Trata eventos
-        for event in pygame.event.get():
-        # ----- Verifica consequências
-            if event.type == pygame.QUIT:
-                end = False
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_s:
-                    TelaGame(True)
-                elif event.key == pygame.K_n:
-                    return False
-
-        window.blit(img_TelaPontuacao, (0, 0))
-
-        pontos = final_score_font.render(str(score), True, (255, 165, 0))
-        window.blit(pontos, (600, 55))
-
-        pygame.display.update()  # Mostra o novo frame para o jogador
 
 #===============================================================================================
 
@@ -347,39 +305,6 @@ def FaseBonus(score):
 
 
 #=============================================================================
-
-
-def AlteraNome (nome_ranking, letra):
-    nome_ranking += letra
-    txt_ranking = font_txt_ranking.render(nome_ranking, True, (255,0,0))
-
-def TelaRanking (status_ranking, score):
-    window.fill(WHITE)
-    nome_ranking = ""
-    while status_ranking:
-        for event in pygame.event.get():
-            if event == pygame.KEYDOWN:
-                AlteraNome(nome_ranking, pygame.key.name(event.key))
-        with open('ranking.txt', 'r') as arquivo:
-            linhas = arquivo.readlines()
-            linha = 0
-            naoColocouNome = True
-            while linha < linhas and naoColocouNome:
-                pontuacao_nome = linhas[linha].split(':')
-                pontuacao = pontuacao_nome[1]
-                if pontuacao < score:
-                    naoColocouNome = False
-                    
-            """
-            for indice_linha in range(len(linhas)):
-                pontuacao_nome = linhas[indice_linha].split(':')
-                pontuacao = pontuacao_nome[0]
-                nome = pontuacao_nome[1]
-                if pontuacao < score:
-                    window.fill(WHITE)
-                    window.blit(font_txt_game_over, (315,10))
-                    window.blit(font_txt_game_over, (315,10))
-                    """
 
 
 def Coracoes(vidas):
