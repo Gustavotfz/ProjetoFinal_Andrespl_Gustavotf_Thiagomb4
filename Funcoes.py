@@ -119,10 +119,10 @@ def DefineFase (score,fase):
     if score >= 100 and fase == 1:
         transicao = True
         fase = 2
-    elif score >= 450 and fase == 2:
+    elif score >= 250 and fase == 2:
         transicao = True
         fase = 3
-    elif score >= 800 and fase == 3:
+    elif score >= 400 and fase == 3:
         transicao = True
         fase = 4
     fase_transicao = [fase,transicao]
@@ -321,7 +321,7 @@ def FaseBonus(score):
     raposas = []
     falling_speed = 5
 
-    game_duration = 20000
+    game_duration = 15000
     pygame.time.set_timer(pygame.USEREVENT, game_duration)
 
     running = True
